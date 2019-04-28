@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Gladiators.dir/main.cpp.o  -o Gladiators 
