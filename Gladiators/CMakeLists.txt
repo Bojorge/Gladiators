@@ -3,4 +3,4 @@ project(Gladiators)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Gladiators main.cpp)
+add_executable(Gladiators main.cpp AStar.h)

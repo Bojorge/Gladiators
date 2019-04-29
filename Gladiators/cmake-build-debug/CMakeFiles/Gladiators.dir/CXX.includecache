@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/manuel/CLionProjects/Gladiators/AStar.h
+bits/stdc++.h
+-
+
+/home/manuel/CLionProjects/Gladiators/main.cpp
+AStar.h
+/home/manuel/CLionProjects/Gladiators/AStar.h
+

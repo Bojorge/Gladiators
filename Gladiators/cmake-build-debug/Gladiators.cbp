@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/AStar.h">
+			<Option target="Gladiators"/>
+		</Unit>
 		<Unit filename="/home/manuel/CLionProjects/Gladiators/main.cpp">
 			<Option target="Gladiators"/>
 		</Unit>
