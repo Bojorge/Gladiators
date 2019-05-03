@@ -87,6 +87,15 @@
 		<Unit filename="/home/manuel/CLionProjects/Gladiators/AStar.h">
 			<Option target="Gladiators"/>
 		</Unit>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/Gladiador.h">
+			<Option target="Gladiators"/>
+		</Unit>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/Oleada.h">
+			<Option target="Gladiators"/>
+		</Unit>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/Torre.h">
+			<Option target="Gladiators"/>
+		</Unit>
 		<Unit filename="/home/manuel/CLionProjects/Gladiators/main.cpp">
 			<Option target="Gladiators"/>
 		</Unit>

@@ -8,8 +8,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define FILA 9
-#define COLUMNA 10
+#define FILA 20
+#define COLUMNA 20
 
 
 class AStar {
@@ -42,7 +42,7 @@ class AStar {
     bool isUnBlocked(int grid[][COLUMNA], int row, int col)
     {
         // Devuelve true si la celda NO está bloqueada
-        if (grid[row][col] == 1)
+        if (grid[row][col] == 0)
             return (true);
         else
             return (false);

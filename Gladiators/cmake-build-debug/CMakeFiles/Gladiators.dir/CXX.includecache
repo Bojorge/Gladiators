@@ -10,7 +10,27 @@
 bits/stdc++.h
 -
 
+/home/manuel/CLionProjects/Gladiators/Gladiador.h
+iostream
+-
+
+/home/manuel/CLionProjects/Gladiators/Oleada.h
+iostream
+-
+cstdlib
+-
+vector
+-
+fstream
+-
+stdlib.h
+-
+Gladiador.h
+/home/manuel/CLionProjects/Gladiators/Gladiador.h
+
 /home/manuel/CLionProjects/Gladiators/main.cpp
 AStar.h
 /home/manuel/CLionProjects/Gladiators/AStar.h
+Oleada.h
+/home/manuel/CLionProjects/Gladiators/Oleada.h
 
