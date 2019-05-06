@@ -20,7 +20,46 @@ private:
     int fuerzaSuperior;
     int fuerzaInferior;
 
+    int inPosX;
+    int inPosY;
+    int outPosX;
+    int outPosY;
+
+
 public:
+    int getInPosX() const {
+        return inPosX;
+    }
+
+    void setInPosX(int inPosX) {
+        Gladiador::inPosX = inPosX;
+    }
+
+    int getInPosY() const {
+        return inPosY;
+    }
+
+    void setInPosY(int inPosY) {
+        Gladiador::inPosY = inPosY;
+    }
+
+    int getOutPosX() const {
+        return outPosX;
+    }
+
+    void setOutPosX(int outPosX) {
+        Gladiador::outPosX = outPosX;
+    }
+
+    int getOutPosY() const {
+        return outPosY;
+    }
+
+    void setOutPosY(int outPosY) {
+        Gladiador::outPosY = outPosY;
+    }
+
+
     string getName(){
         return name;
     }

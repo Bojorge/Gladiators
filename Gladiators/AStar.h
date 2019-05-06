@@ -68,7 +68,7 @@ class AStar {
 // Una función de utilidad para rastrear la ruta desde la fuente al destino
     void tracePath(cell cellDetails[][COLUMNA], Pair dest)
     {
-        printf ("\nThe Path is ");
+        printf ("   La Ruta del gladiador es ");
         int row = dest.first;
         int col = dest.second;
 
@@ -103,14 +103,14 @@ public:
             // Si la fuente está fuera de rango
             if (isValid (src.first, src.second) == false)
             {
-                printf ("Source is invalid\n");
+                printf ("La celda de comienzo no es valida\n");
                 return;
             }
 
             // Si el destino está fuera de rango
             if (isValid (dest.first, dest.second) == false)
             {
-                printf ("Destination is invalid\n");
+                printf ("El destino no es valido\n");
                 return;
             }
 
@@ -118,14 +118,14 @@ public:
             if (isUnBlocked(grid, src.first, src.second) == false ||
                 isUnBlocked(grid, dest.first, dest.second) == false)
             {
-                printf ("Source or the destination is blocked\n");
+                printf ("La fuente o el destino están bloqueados\n");
                 return;
             }
 
             // Si la celda de destino es la misma que la celda de origen
             if (isDestination(src.first, src.second, dest) == true)
             {
-                printf ("We are already at the destination\n");
+                printf ("La celda de destino es la misma que la celda de origen\n");
                 return;
             }
 
@@ -222,7 +222,7 @@ public:
                         // Establece el padre de la celda de destino
                         cellDetails[i-1][j].parent_i = i;
                         cellDetails[i-1][j].parent_j = j;
-                        printf ("The destination cell is found\n");
+                        printf ("La celda de destino se ha encontrado\n");
                         tracePath (cellDetails, dest);
                         foundDest = true;
                         return;
@@ -269,7 +269,7 @@ public:
                         // Establecer el padre de la celda de destino
                         cellDetails[i+1][j].parent_i = i;
                         cellDetails[i+1][j].parent_j = j;
-                        printf("The destination cell is found\n");
+                        printf("La celda de destino se ha encontrado\n");
                         tracePath(cellDetails, dest);
                         foundDest = true;
                         return;
@@ -314,7 +314,7 @@ public:
                         // Establecer el padre de la celda de destino
                         cellDetails[i][j+1].parent_i = i;
                         cellDetails[i][j+1].parent_j = j;
-                        printf("The destination cell is found\n");
+                        printf("La celda de destino se ha encontrado\n");
                         tracePath(cellDetails, dest);
                         foundDest = true;
                         return;
@@ -362,7 +362,7 @@ public:
                         // Establecer el padre de la celda de destino
                         cellDetails[i][j-1].parent_i = i;
                         cellDetails[i][j-1].parent_j = j;
-                        printf("The destination cell is found\n");
+                        printf("La celda de destino se ha encontrado\n");
                         tracePath(cellDetails, dest);
                         foundDest = true;
                         return;
@@ -410,7 +410,7 @@ public:
                         // Establecer el padre de la celda de destino
                         cellDetails[i-1][j+1].parent_i = i;
                         cellDetails[i-1][j+1].parent_j = j;
-                        printf ("The destination cell is found\n");
+                        printf ("La celda de destino se ha encontrado\n");
                         tracePath (cellDetails, dest);
                         foundDest = true;
                         return;
@@ -458,7 +458,7 @@ public:
                         // Establecer el padre de la celda de destino
                         cellDetails[i-1][j-1].parent_i = i;
                         cellDetails[i-1][j-1].parent_j = j;
-                        printf ("The destination cell is found\n");
+                        printf ("La celda de destino se ha encontrado\n");
                         tracePath (cellDetails, dest);
                         foundDest = true;
                         return;
@@ -504,7 +504,7 @@ public:
                         // Establecer el padre de la celda de destino
                         cellDetails[i+1][j+1].parent_i = i;
                         cellDetails[i+1][j+1].parent_j = j;
-                        printf ("The destination cell is found\n");
+                        printf ("La celda de destino se ha encontrado\n");
                         tracePath (cellDetails, dest);
                         foundDest = true;
                         return;
@@ -552,7 +552,7 @@ public:
                         // Establecer el padre de la celda de destino
                         cellDetails[i+1][j-1].parent_i = i;
                         cellDetails[i+1][j-1].parent_j = j;
-                        printf("The destination cell is found\n");
+                        printf("La celda de destino se ha encontrado\n");
                         tracePath(cellDetails, dest);
                         foundDest = true;
                         return;
@@ -594,7 +594,7 @@ public:
             // entonces llegamos a la conclusión de que no pudimos llegar a la celda de destino
             // Esto puede suceder cuando no hay manera de llegar a la celda de destino (debido a bloqueos)
             if (foundDest == false)
-                printf("Failed to find the Destination Cell\n");
+                printf("Error al encontrar la celda de destino (no se encontro una ruta\n");
 
             return;
         }

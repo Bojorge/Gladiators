@@ -10,25 +10,30 @@
 #include <vector>
 #include <fstream>
 #include <stdlib.h>
+#include <zconf.h>
 #include "Gladiador.h"
+#include "Grid.h"
 
 using namespace std;
 
 class Oleada{
-public:
-
+private:
+    typedef pair<int, int> Pair;
     int random = rand() % 100;
     std::vector<Gladiador> oleada;
 
-
+public:
+    const vector<Gladiador> &getOleada() const {
+        return oleada;
+    }
 
 ///metodo que creaa la oleada de gladiadores que se le meta como parametro
     void crearOleada(int cantGladiadores){
-        int ind=0;
+
         //while(cantGladiadores >0){
+        Gladiador gladiador;
         for(int i=0;i<cantGladiadores;i++){
-            Gladiador gladiador;
-            gladiador.setName("Saico ");//busca en la lista de nombres desordenados
+            gladiador.setName("Saico");//busca en la lista de nombres desordenados
             gladiador.setcondFisica(rand() % 100);
             gladiador.setEdad(rand() % 100);
             gladiador.setGeneraciones(rand() % 100);
@@ -36,15 +41,35 @@ public:
             gladiador.setfuerzaSuperior(rand() % 100);
             gladiador.setprobSupervivencia(rand() % 100);
             gladiador.setinteligenciaEmocional(rand() % 100);
+
+            gladiador.setInPosX(i);
+            gladiador.setInPosY(i);
+            gladiador.setOutPosX(19);
+            gladiador.setOutPosY(19);
+
             oleada.push_back(gladiador);
-            ind++;
-            //cantGladiadores--;
-            i++;
-            cout<<">>> "<<gladiador.getName()<<endl;
-
-
         }
 
+        for(int i=0;i<oleada.size();i++){
+            cout<<"\n * "<<oleada[i].getName();
+        }
+
+    }
+
+    void empezarRecorrido(vector<Gladiador> oleada){ //debe recibir dos listas, una de gladiadores y otra de torres
+
+        AStar pathfinding;
+        Grid matriz;
+
+        for(int i=0;i<oleada.size();i++){
+            cout<<"\n * GLADIADOR "<<i<<endl;
+            Pair inicio = make_pair(oleada[i].getInPosY(), oleada[i].getInPosX());
+            Pair fin = make_pair(oleada[i].getOutPosY(), oleada[i].getOutPosX());
+            pathfinding.aStarSearch(matriz.grid,inicio,fin);
+            sleep(3);
+            cout<<"\n \n";
+        }
+        cout<<"\n \n";
     }
 
 ///metodo que lee el archivo txt de los nombres y mete cada nombre dentro de una lista
