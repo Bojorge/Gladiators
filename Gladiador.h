@@ -19,6 +19,7 @@ private:
     int condFisica;
     int fuerzaSuperior;
     int fuerzaInferior;
+    int resistencia = (probSupervivencia+generaciones+inteligenciaEmocional+condFisica+fuerzaSuperior+fuerzaInferior)/6;
     int x,y;
 
 public:
@@ -90,6 +91,13 @@ public:
         Gladiador::fuerzaInferior = x;
 
     }
+    int getResistencia(){
+        return resistencia;
+    }
+    void setResistencia(int x){
+        Gladiador ::resistencia = x;
+    }
+        
 
 };
 
