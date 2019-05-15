@@ -108,7 +108,19 @@
 		<Unit filename="/home/manuel/CLionProjects/Gladiators/Torre.h">
 			<Option target="Gladiators"/>
 		</Unit>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/list.cpp">
+			<Option target="Gladiators"/>
+		</Unit>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/list.h">
+			<Option target="Gladiators"/>
+		</Unit>
 		<Unit filename="/home/manuel/CLionProjects/Gladiators/main.cpp">
+			<Option target="Gladiators"/>
+		</Unit>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/node.cpp">
+			<Option target="Gladiators"/>
+		</Unit>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/node.h">
 			<Option target="Gladiators"/>
 		</Unit>
 		<Unit filename="/home/manuel/CLionProjects/Gladiators/CMakeLists.txt">

@@ -13,6 +13,8 @@ Grid.h
 /home/manuel/CLionProjects/Gladiators/Grid.h
 Lista.h
 /home/manuel/CLionProjects/Gladiators/Lista.h
+list.h
+/home/manuel/CLionProjects/Gladiators/list.h
 
 /home/manuel/CLionProjects/Gladiators/Backtracking.h
 cstdio
@@ -54,6 +56,20 @@ Gladiador.h
 Grid.h
 /home/manuel/CLionProjects/Gladiators/Grid.h
 
+/home/manuel/CLionProjects/Gladiators/list.h
+fstream
+-
+iostream
+-
+string
+-
+stdlib.h
+-
+node.h
+/home/manuel/CLionProjects/Gladiators/node.h
+node.cpp
+/home/manuel/CLionProjects/Gladiators/node.cpp
+
 /home/manuel/CLionProjects/Gladiators/main.cpp
 AStar.h
 /home/manuel/CLionProjects/Gladiators/AStar.h
@@ -61,4 +77,14 @@ Oleada.h
 /home/manuel/CLionProjects/Gladiators/Oleada.h
 Backtracking.h
 /home/manuel/CLionProjects/Gladiators/Backtracking.h
+
+/home/manuel/CLionProjects/Gladiators/node.cpp
+clocale
+-
+node.h
+/home/manuel/CLionProjects/Gladiators/node.h
+
+/home/manuel/CLionProjects/Gladiators/node.h
+iostream
+-
 

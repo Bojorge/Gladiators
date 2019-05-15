@@ -123,6 +123,33 @@ Gladiators/fast:
 	$(MAKE) -f CMakeFiles/Gladiators.dir/build.make CMakeFiles/Gladiators.dir/build
 .PHONY : Gladiators/fast
 
+list.o: list.cpp.o
+
+.PHONY : list.o
+
+# target to build an object file
+list.cpp.o:
+	$(MAKE) -f CMakeFiles/Gladiators.dir/build.make CMakeFiles/Gladiators.dir/list.cpp.o
+.PHONY : list.cpp.o
+
+list.i: list.cpp.i
+
+.PHONY : list.i
+
+# target to preprocess a source file
+list.cpp.i:
+	$(MAKE) -f CMakeFiles/Gladiators.dir/build.make CMakeFiles/Gladiators.dir/list.cpp.i
+.PHONY : list.cpp.i
+
+list.s: list.cpp.s
+
+.PHONY : list.s
+
+# target to generate assembly for a file
+list.cpp.s:
+	$(MAKE) -f CMakeFiles/Gladiators.dir/build.make CMakeFiles/Gladiators.dir/list.cpp.s
+.PHONY : list.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -150,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/Gladiators.dir/build.make CMakeFiles/Gladiators.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+node.o: node.cpp.o
+
+.PHONY : node.o
+
+# target to build an object file
+node.cpp.o:
+	$(MAKE) -f CMakeFiles/Gladiators.dir/build.make CMakeFiles/Gladiators.dir/node.cpp.o
+.PHONY : node.cpp.o
+
+node.i: node.cpp.i
+
+.PHONY : node.i
+
+# target to preprocess a source file
+node.cpp.i:
+	$(MAKE) -f CMakeFiles/Gladiators.dir/build.make CMakeFiles/Gladiators.dir/node.cpp.i
+.PHONY : node.cpp.i
+
+node.s: node.cpp.s
+
+.PHONY : node.s
+
+# target to generate assembly for a file
+node.cpp.s:
+	$(MAKE) -f CMakeFiles/Gladiators.dir/build.make CMakeFiles/Gladiators.dir/node.cpp.s
+.PHONY : node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Gladiators"
 	@echo "... edit_cache"
+	@echo "... list.o"
+	@echo "... list.i"
+	@echo "... list.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... node.o"
+	@echo "... node.i"
+	@echo "... node.s"
 .PHONY : help
 
 

@@ -8,6 +8,7 @@
 #include<bits/stdc++.h>
 #include "Grid.h"
 #include "Lista.h"
+#include "list.h"
 
 using namespace std;
 
@@ -157,20 +158,23 @@ public:
 
 public:
     // Una función para encontrar el camino más corto entre una celda de origen dada a una celda de destino
-        void aStarSearch(int grid[][COLUMNA], Pair src, Pair dest)
+        Lista aStarSearch(int grid[][COLUMNA], Pair src, Pair dest)
         {
+            Lista recorrido_Nulo;
+
+
             // Si la fuente está fuera de rango
             if (isValid (src.first, src.second) == false)
             {
                 printf ("La celda de comienzo no es valida\n");
-                return;
+                return recorrido_Nulo;
             }
 
             // Si el destino está fuera de rango
             if (isValid (dest.first, dest.second) == false)
             {
                 printf ("El destino no es valido\n");
-                return;
+                return recorrido_Nulo;
             }
 
             // O la fuente o el destino están bloqueados
@@ -178,14 +182,14 @@ public:
                 isUnBlocked(grid, dest.first, dest.second) == false)
             {
                 printf ("La fuente o el destino están bloqueados\n");
-                return;
+                return recorrido_Nulo;
             }
 
             // Si la celda de destino es la misma que la celda de origen
             if (isDestination(src.first, src.second, dest) == true)
             {
                 printf ("La celda de destino es la misma que la celda de origen\n");
-                return;
+                return recorrido_Nulo;
             }
 
             // Crea una lista cerrada e inicializada en falso, lo que significa que aún no se ha incluido ninguna celda
@@ -283,11 +287,11 @@ public:
                         printf ("La celda de destino se ha encontrado\n");
                         tracePath (cellDetails, dest);
 
-                        listaCamino(cellDetails);
+
 
 
                         foundDest = true;
-                        return;
+                        return listaCamino(cellDetails);
                     }
                     //Si el sucesor NO está en el la lista cerrada. o si NO está bloqueado, entonces haga lo siguiente.
                     //De lo contrario ignorelo
@@ -334,11 +338,11 @@ public:
                         printf("La celda de destino se ha encontrado\n");
                         tracePath(cellDetails, dest);
 
-                        listaCamino(cellDetails);
+
 
 
                         foundDest = true;
-                        return;
+                        return listaCamino(cellDetails);
                     }
                     // Si el sucesor ya está en la lista cerrada o si está bloqueado, ignorarlo.
                     // Sino haga lo siguiente
@@ -383,11 +387,11 @@ public:
                         printf("La celda de destino se ha encontrado\n");
                         tracePath(cellDetails, dest);
 
-                        listaCamino(cellDetails);
+
 
 
                         foundDest = true;
-                        return;
+                        return listaCamino(cellDetails);
                     }
 
                         // Si el sucesor ya está en la lista cerrada o si está bloqueado, ignorarlo.
@@ -435,11 +439,11 @@ public:
                         printf("La celda de destino se ha encontrado\n");
                         tracePath(cellDetails, dest);
 
-                        listaCamino(cellDetails);
+
 
 
                         foundDest = true;
-                        return;
+                        return listaCamino(cellDetails);
                     }
 
                         // Si el sucesor ya está en la lista cerrada o si está bloqueado, ignorarlo.
@@ -487,11 +491,11 @@ public:
                         printf ("La celda de destino se ha encontrado\n");
                         tracePath (cellDetails, dest);
 
-                        listaCamino(cellDetails);
+
 
 
                         foundDest = true;
-                        return;
+                        return listaCamino(cellDetails);
                     }
 
                         // Si el sucesor ya está en la lista cerrada o si está bloqueado, ignorarlo.
@@ -539,11 +543,11 @@ public:
                         printf ("La celda de destino se ha encontrado\n");
                         tracePath (cellDetails, dest);
 
-                        listaCamino(cellDetails);
+
 
 
                         foundDest = true;
-                        return;
+                        return listaCamino(cellDetails);
                     }
 
                         // Si el sucesor ya está en la lista cerrada o si está bloqueado, ignorarlo.
@@ -589,11 +593,11 @@ public:
                         printf ("La celda de destino se ha encontrado\n");
                         tracePath (cellDetails, dest);
 
-                        listaCamino(cellDetails);
+
 
 
                         foundDest = true;
-                        return;
+                        return listaCamino(cellDetails);
                     }
 
                         // Si el sucesor ya está en la lista cerrada o si está bloqueado, ignorarlo.
@@ -641,11 +645,11 @@ public:
                         printf("La celda de destino se ha encontrado\n");
                         tracePath(cellDetails, dest);
 
-                        listaCamino(cellDetails);
+
 
 
                         foundDest = true;
-                        return;
+                        return listaCamino(cellDetails);
                     }
 
                         // Si el sucesor ya está en la lista cerrada o si está bloqueado, ignorarlo.
@@ -689,7 +693,7 @@ public:
 
 
 
-            return;
+            return recorrido_Nulo;
         }
 
 };
