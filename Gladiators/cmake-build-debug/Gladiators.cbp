@@ -96,6 +96,12 @@
 		<Unit filename="/home/manuel/CLionProjects/Gladiators/Grid.h">
 			<Option target="Gladiators"/>
 		</Unit>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/Lista.h">
+			<Option target="Gladiators"/>
+		</Unit>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/Nodo.h">
+			<Option target="Gladiators"/>
+		</Unit>
 		<Unit filename="/home/manuel/CLionProjects/Gladiators/Oleada.h">
 			<Option target="Gladiators"/>
 		</Unit>

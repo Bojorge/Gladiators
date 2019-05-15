@@ -11,6 +11,8 @@ bits/stdc++.h
 -
 Grid.h
 /home/manuel/CLionProjects/Gladiators/Grid.h
+Lista.h
+/home/manuel/CLionProjects/Gladiators/Lista.h
 
 /home/manuel/CLionProjects/Gladiators/Backtracking.h
 cstdio
@@ -25,6 +27,14 @@ iostream
 /home/manuel/CLionProjects/Gladiators/Grid.h
 AStar.h
 /home/manuel/CLionProjects/Gladiators/AStar.h
+
+/home/manuel/CLionProjects/Gladiators/Lista.h
+clocale
+-
+Nodo.h
+/home/manuel/CLionProjects/Gladiators/Nodo.h
+
+/home/manuel/CLionProjects/Gladiators/Nodo.h
 
 /home/manuel/CLionProjects/Gladiators/Oleada.h
 iostream

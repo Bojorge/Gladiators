@@ -7,6 +7,7 @@
 
 #include<bits/stdc++.h>
 #include "Grid.h"
+#include "Lista.h"
 
 using namespace std;
 
@@ -15,6 +16,8 @@ using namespace std;
 
 
 class AStar {
+
+
 
     // Creating a shortcut for int, int pair type
     typedef pair<int, int> Pair;
@@ -33,6 +36,7 @@ class AStar {
     };
 
 
+private:
 
 // Una función de utilidad para verificar si una celda dada (fila, columna) es una celda válida o no
     bool isValid(int row, int col)
@@ -72,6 +76,7 @@ class AStar {
 // Una función de utilidad para rastrear la ruta desde la fuente al destino
     void tracePath(cell cellDetails[][COLUMNA], Pair dest)
     {
+        //Lista camino;
         printf ("   La Ruta del gladiador es ");
         int row = dest.first;
         int col = dest.second;
@@ -95,16 +100,21 @@ class AStar {
             Path.pop();
             printf("-> (%d,%d) ",p.first,p.second);
 
+            //camino.anadir_final(p.first);
+            //camino.anadir_final(p.second);
 
         }
+        //printf ("\n se imprimira el camino  \n");
+        //camino.print_lista();
 
         return;
     }
 
-    void analizarPosicionActual(cell cellDetails[][COLUMNA], Pair dest){
-        printf ("   La nueva ruta del gladiador es  ");
-        int row = dest.first;
-        int col = dest.second;
+    Lista listaCamino(cell cellDetails[][COLUMNA]){
+        Lista camino;
+
+        int row = 19;
+        int col = 19;
 
         stack<Pair> Path;
 
@@ -123,15 +133,16 @@ class AStar {
         {
             pair<int,int> p = Path.top();
             Path.pop();
-            printf("-> (%d,%d) ",p.first,p.second);
+            //printf("-> (%d,%d) ",p.first,p.second);
 
-
-            cout<<" se aplicara otra vez Astar desde la posicion ("<<p.first<<" ,"<<p.second<<")";
-            analizarCamino(p,dest);
+            camino.anadir_final(p.first);
+            camino.anadir_final(p.second);
 
         }
+        printf ("\n \n *** se imprimira el camino en forma de lista (x1, y1, x2, y2, ... , xn, yn) \n");
+        camino.print_lista();
 
-        return;
+        return camino;
     }
 
 public:
@@ -186,7 +197,6 @@ public:
             cell cellDetails[FILA][COLUMNA];
 
             int i, j;
-
             for (i=0; i<FILA; i++)
             {
                 for (j=0; j<COLUMNA; j++)
@@ -271,12 +281,11 @@ public:
                         cellDetails[i-1][j].parent_i = i;
                         cellDetails[i-1][j].parent_j = j;
                         printf ("La celda de destino se ha encontrado\n");
-
-
-                        //analizarPosicionActual(cellDetails,dest);
-
-
                         tracePath (cellDetails, dest);
+
+                        listaCamino(cellDetails);
+
+
                         foundDest = true;
                         return;
                     }
@@ -323,11 +332,11 @@ public:
                         cellDetails[i+1][j].parent_i = i;
                         cellDetails[i+1][j].parent_j = j;
                         printf("La celda de destino se ha encontrado\n");
-
-                        //analizarPosicionActual(cellDetails,dest);
-
-
                         tracePath(cellDetails, dest);
+
+                        listaCamino(cellDetails);
+
+
                         foundDest = true;
                         return;
                     }
@@ -372,11 +381,11 @@ public:
                         cellDetails[i][j+1].parent_i = i;
                         cellDetails[i][j+1].parent_j = j;
                         printf("La celda de destino se ha encontrado\n");
-
-                        //analizarPosicionActual(cellDetails,dest);
-
-
                         tracePath(cellDetails, dest);
+
+                        listaCamino(cellDetails);
+
+
                         foundDest = true;
                         return;
                     }
@@ -424,11 +433,11 @@ public:
                         cellDetails[i][j-1].parent_i = i;
                         cellDetails[i][j-1].parent_j = j;
                         printf("La celda de destino se ha encontrado\n");
-
-                        //analizarPosicionActual(cellDetails,dest);
-
-
                         tracePath(cellDetails, dest);
+
+                        listaCamino(cellDetails);
+
+
                         foundDest = true;
                         return;
                     }
@@ -476,11 +485,11 @@ public:
                         cellDetails[i-1][j+1].parent_i = i;
                         cellDetails[i-1][j+1].parent_j = j;
                         printf ("La celda de destino se ha encontrado\n");
-
-                        //analizarPosicionActual(cellDetails,dest);
-
-
                         tracePath (cellDetails, dest);
+
+                        listaCamino(cellDetails);
+
+
                         foundDest = true;
                         return;
                     }
@@ -528,11 +537,11 @@ public:
                         cellDetails[i-1][j-1].parent_i = i;
                         cellDetails[i-1][j-1].parent_j = j;
                         printf ("La celda de destino se ha encontrado\n");
-
-                        //analizarPosicionActual(cellDetails,dest);
-
-
                         tracePath (cellDetails, dest);
+
+                        listaCamino(cellDetails);
+
+
                         foundDest = true;
                         return;
                     }
@@ -578,11 +587,11 @@ public:
                         cellDetails[i+1][j+1].parent_i = i;
                         cellDetails[i+1][j+1].parent_j = j;
                         printf ("La celda de destino se ha encontrado\n");
-
-                        //analizarPosicionActual(cellDetails,dest);
-
-
                         tracePath (cellDetails, dest);
+
+                        listaCamino(cellDetails);
+
+
                         foundDest = true;
                         return;
                     }
@@ -630,11 +639,11 @@ public:
                         cellDetails[i+1][j-1].parent_i = i;
                         cellDetails[i+1][j-1].parent_j = j;
                         printf("La celda de destino se ha encontrado\n");
-
-                        //analizarPosicionActual(cellDetails,dest);
-
-
                         tracePath(cellDetails, dest);
+
+                        listaCamino(cellDetails);
+
+
                         foundDest = true;
                         return;
                     }
@@ -671,11 +680,14 @@ public:
                 }
             }
 
+
             // Cuando la celda de destino no se encuentra y la lista está vacía
             // entonces llegamos a la conclusión de que no pudimos llegar a la celda de destino
             // Esto puede suceder cuando no hay manera de llegar a la celda de destino (debido a bloqueos)
             if (foundDest == false)
                 printf("Error al encontrar la celda de destino (no se encontro una ruta\n");
+
+
 
             return;
         }

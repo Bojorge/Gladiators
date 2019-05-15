@@ -5,6 +5,8 @@ CMakeFiles/Gladiators.dir/main.cpp.o: ../AStar.h
 CMakeFiles/Gladiators.dir/main.cpp.o: ../Backtracking.h
 CMakeFiles/Gladiators.dir/main.cpp.o: ../Gladiador.h
 CMakeFiles/Gladiators.dir/main.cpp.o: ../Grid.h
+CMakeFiles/Gladiators.dir/main.cpp.o: ../Lista.h
+CMakeFiles/Gladiators.dir/main.cpp.o: ../Nodo.h
 CMakeFiles/Gladiators.dir/main.cpp.o: ../Oleada.h
 CMakeFiles/Gladiators.dir/main.cpp.o: ../main.cpp
 
