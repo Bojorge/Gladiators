@@ -4,56 +4,115 @@
 
 #ifndef GLADIADOR_TORRES_H
 #define GLADIADOR_TORRES_H
+#include <iostream>
+
+using namespace std;
 
 
 class Torres {
 
-    int alcance;
-    int dano;
+
+    string nombre;
+    int generaciones;
+    int danoInferior;
+    int danoSuperior;
+    int potencia;
     int tipobala;
+    int fuerzalanzador;
+    int velocidadlanzador;
+    int altotorre;
+    int dano = (generaciones+danoInferior+danoSuperior+potencia+tipobala-altotorre)/4;
+    int alcance = (fuerzalanzador+velocidadlanzador+altotorre-tipobala)/2;
+
 
 public:
+    const string &getNombre() const {
+        return nombre;
+    }
+
+    void setNombre(const string &nombre) {
+        Torres::nombre = nombre;
+    }
+
+    int getGeneraciones() const {
+        return generaciones;
+    }
+
+    void setGeneraciones(int generaciones) {
+        Torres::generaciones = generaciones;
+    }
+
+    int getDanoInferior() const {
+        return danoInferior;
+    }
+
+    void setDanoInferior(int danoInferior) {
+        Torres::danoInferior = danoInferior;
+    }
+
+    int getDanoSuperior() const {
+        return danoSuperior;
+    }
+
+    void setDanoSuperior(int danoSuperior) {
+        Torres::danoSuperior = danoSuperior;
+    }
+
+    int getPotencia() const {
+        return potencia;
+    }
+
+    void setPotencia(int potencia) {
+        Torres::potencia = potencia;
+    }
+
     int getTipobala() const {
         return tipobala;
     }
 
     void setTipobala(int tipobala) {
-        if (tipobala == 1){
-            Torres :: dano = 1;
-            Torres :: alcance = 5;
-
-        }
-        if (tipobala == 2){
-            Torres :: dano = 2;
-            Torres :: alcance = 4;
-
-        }
-        if (tipobala == 3){
-            Torres :: dano = 3;
-            Torres :: alcance = 3;
-
-        }
-        if (tipobala == 4){
-            Torres :: dano = 4;
-            Torres :: alcance = 2;
-
-        }
-        if (tipobala == 5){
-            Torres :: dano = 5;
-            Torres :: alcance = 1;
-
-        }
         Torres::tipobala = tipobala;
     }
 
-    int getAlcance() const {
-        return alcance;
+    int getFuerzalanzador() const {
+        return fuerzalanzador;
+    }
+
+    void setFuerzalanzador(int fuerzalanzador) {
+        Torres::fuerzalanzador = fuerzalanzador;
+    }
+
+    int getVelocidadlanzador() const {
+        return velocidadlanzador;
+    }
+
+    void setVelocidadlanzador(int velocidadlanzador) {
+        Torres::velocidadlanzador = velocidadlanzador;
+    }
+
+    int getAltotorre() const {
+        return altotorre;
+    }
+
+    void setAltotorre(int altotorre) {
+        Torres::altotorre = altotorre;
     }
 
     int getDano() const {
         return dano;
     }
 
+    void setDano(int dano) {
+        Torres::dano = dano;
+    }
+
+    int getAlcance() const {
+        return alcance;
+    }
+
+    void setAlcance(int alcance) {
+        Torres::alcance = alcance;
+    }
 
 };
 
