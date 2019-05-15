@@ -50,27 +50,25 @@ public:
             oleada.push_back(gladiador);
         }
 
-        for(int i=0;i<oleada.size();i++){
-            cout<<"\n * "<<oleada[i].getName();
-        }
 
     }
 
-    void empezarRecorrido(vector<Gladiador> oleada){ //debe recibir dos listas, una de gladiadores y otra de torres
+    void empezarRecorrido(vector<Gladiador> gladiadoresTablero){ //debe recibir dos listas, una de gladiadores y otra de torres
 
         AStar pathfinding;
-        Grid matriz;
 
-        for(int i=0;i<oleada.size();i++){
+
+        for(int i=0;i<gladiadoresTablero.size();i++){
             cout<<"\n * GLADIADOR "<<i<<endl;
-            Pair inicio = make_pair(oleada[i].getInPosY(), oleada[i].getInPosX());
-            Pair fin = make_pair(oleada[i].getOutPosY(), oleada[i].getOutPosX());
-            pathfinding.aStarSearch(matriz.grid,inicio,fin);
+            Pair inicio = make_pair(gladiadoresTablero[i].getInPosY(), gladiadoresTablero[i].getInPosX());
+            Pair fin = make_pair(gladiadoresTablero[i].getOutPosY(), gladiadoresTablero[i].getOutPosX());
+            pathfinding.analizarCamino(inicio,fin);
             sleep(3);
             cout<<"\n \n";
         }
         cout<<"\n \n";
     }
+
 
 ///metodo que lee el archivo txt de los nombres y mete cada nombre dentro de una lista
     vector<string> crearListaNombres(){

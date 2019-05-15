@@ -6,6 +6,8 @@
 #define GLADIATORS_ASTAR_H
 
 #include<bits/stdc++.h>
+#include "Grid.h"
+
 using namespace std;
 
 #define FILA 20
@@ -29,6 +31,8 @@ class AStar {
         // f = g + h
         double f, g, h;
     };
+
+
 
 // Una función de utilidad para verificar si una celda dada (fila, columna) es una celda válida o no
     bool isValid(int row, int col)
@@ -90,9 +94,53 @@ class AStar {
             pair<int,int> p = Path.top();
             Path.pop();
             printf("-> (%d,%d) ",p.first,p.second);
+
+
         }
 
         return;
+    }
+
+    void analizarPosicionActual(cell cellDetails[][COLUMNA], Pair dest){
+        printf ("   La nueva ruta del gladiador es  ");
+        int row = dest.first;
+        int col = dest.second;
+
+        stack<Pair> Path;
+
+        while (!(cellDetails[row][col].parent_i == row
+                 && cellDetails[row][col].parent_j == col ))
+        {
+            Path.push (make_pair (row, col));
+            int temp_row = cellDetails[row][col].parent_i;
+            int temp_col = cellDetails[row][col].parent_j;
+            row = temp_row;
+            col = temp_col;
+        }
+
+        Path.push (make_pair (row, col));
+        while (!Path.empty())
+        {
+            pair<int,int> p = Path.top();
+            Path.pop();
+            printf("-> (%d,%d) ",p.first,p.second);
+
+
+            cout<<" se aplicara otra vez Astar desde la posicion ("<<p.first<<" ,"<<p.second<<")";
+            analizarCamino(p,dest);
+
+        }
+
+        return;
+    }
+
+public:
+    void analizarCamino(Pair inicio, Pair fin)
+    {
+        Grid matriz;
+
+        aStarSearch(matriz.grid,inicio,fin);
+
     }
 
 
@@ -223,6 +271,11 @@ public:
                         cellDetails[i-1][j].parent_i = i;
                         cellDetails[i-1][j].parent_j = j;
                         printf ("La celda de destino se ha encontrado\n");
+
+
+                        //analizarPosicionActual(cellDetails,dest);
+
+
                         tracePath (cellDetails, dest);
                         foundDest = true;
                         return;
@@ -270,6 +323,10 @@ public:
                         cellDetails[i+1][j].parent_i = i;
                         cellDetails[i+1][j].parent_j = j;
                         printf("La celda de destino se ha encontrado\n");
+
+                        //analizarPosicionActual(cellDetails,dest);
+
+
                         tracePath(cellDetails, dest);
                         foundDest = true;
                         return;
@@ -315,6 +372,10 @@ public:
                         cellDetails[i][j+1].parent_i = i;
                         cellDetails[i][j+1].parent_j = j;
                         printf("La celda de destino se ha encontrado\n");
+
+                        //analizarPosicionActual(cellDetails,dest);
+
+
                         tracePath(cellDetails, dest);
                         foundDest = true;
                         return;
@@ -363,6 +424,10 @@ public:
                         cellDetails[i][j-1].parent_i = i;
                         cellDetails[i][j-1].parent_j = j;
                         printf("La celda de destino se ha encontrado\n");
+
+                        //analizarPosicionActual(cellDetails,dest);
+
+
                         tracePath(cellDetails, dest);
                         foundDest = true;
                         return;
@@ -411,6 +476,10 @@ public:
                         cellDetails[i-1][j+1].parent_i = i;
                         cellDetails[i-1][j+1].parent_j = j;
                         printf ("La celda de destino se ha encontrado\n");
+
+                        //analizarPosicionActual(cellDetails,dest);
+
+
                         tracePath (cellDetails, dest);
                         foundDest = true;
                         return;
@@ -459,6 +528,10 @@ public:
                         cellDetails[i-1][j-1].parent_i = i;
                         cellDetails[i-1][j-1].parent_j = j;
                         printf ("La celda de destino se ha encontrado\n");
+
+                        //analizarPosicionActual(cellDetails,dest);
+
+
                         tracePath (cellDetails, dest);
                         foundDest = true;
                         return;
@@ -505,6 +578,10 @@ public:
                         cellDetails[i+1][j+1].parent_i = i;
                         cellDetails[i+1][j+1].parent_j = j;
                         printf ("La celda de destino se ha encontrado\n");
+
+                        //analizarPosicionActual(cellDetails,dest);
+
+
                         tracePath (cellDetails, dest);
                         foundDest = true;
                         return;
@@ -553,6 +630,10 @@ public:
                         cellDetails[i+1][j-1].parent_i = i;
                         cellDetails[i+1][j-1].parent_j = j;
                         printf("La celda de destino se ha encontrado\n");
+
+                        //analizarPosicionActual(cellDetails,dest);
+
+
                         tracePath(cellDetails, dest);
                         foundDest = true;
                         return;
@@ -598,6 +679,7 @@ public:
 
             return;
         }
+
 };
 
 

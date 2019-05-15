@@ -9,6 +9,8 @@
 /home/manuel/CLionProjects/Gladiators/AStar.h
 bits/stdc++.h
 -
+Grid.h
+/home/manuel/CLionProjects/Gladiators/Grid.h
 
 /home/manuel/CLionProjects/Gladiators/Backtracking.h
 cstdio
