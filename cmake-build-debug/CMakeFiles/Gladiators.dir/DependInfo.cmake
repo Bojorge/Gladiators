@@ -4,9 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/aaron/CLionProjects/Gladiators/list.cpp" "/home/aaron/CLionProjects/Gladiators/cmake-build-debug/CMakeFiles/Gladiators.dir/list.cpp.o"
   "/home/aaron/CLionProjects/Gladiators/main.cpp" "/home/aaron/CLionProjects/Gladiators/cmake-build-debug/CMakeFiles/Gladiators.dir/main.cpp.o"
+  "/home/aaron/CLionProjects/Gladiators/node.cpp" "/home/aaron/CLionProjects/Gladiators/cmake-build-debug/CMakeFiles/Gladiators.dir/node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "QT_CORE_LIB"
+  "QT_GUI_LIB"
+  "QT_SQL_LIB"
+  "QT_WIDGETS_LIB"
+  )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
@@ -26,6 +36,12 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/gdk-pixbuf-2.0"
   "/usr/include/glib-2.0"
   "/usr/lib/x86_64-linux-gnu/glib-2.0/include"
+  "/usr/include/x86_64-linux-gnu/qt5"
+  "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
+  "/usr/include/x86_64-linux-gnu/qt5/QtGui"
+  "/usr/include/x86_64-linux-gnu/qt5/QtCore"
+  "/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"
+  "/usr/include/x86_64-linux-gnu/qt5/QtSql"
   )
 
 # Targets to which this target links.

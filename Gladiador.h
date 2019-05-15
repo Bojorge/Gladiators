@@ -19,8 +19,17 @@ private:
     int condFisica;
     int fuerzaSuperior;
     int fuerzaInferior;
-    int resistencia = (probSupervivencia+generaciones+inteligenciaEmocional+condFisica+fuerzaSuperior+fuerzaInferior)/6;
     int x,y;
+    int resistencia;
+public:
+    int getResistencia() const {
+        return resistencia;
+    }
+
+    void setResistencia(int resistencia) {
+        Gladiador::resistencia = resistencia;
+    }
+
 
 public:
     int getX(){
@@ -91,13 +100,6 @@ public:
         Gladiador::fuerzaInferior = x;
 
     }
-    int getResistencia(){
-        return resistencia;
-    }
-    void setResistencia(int x){
-        Gladiador ::resistencia = x;
-    }
-        
 
 };
 

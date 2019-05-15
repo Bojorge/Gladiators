@@ -12,6 +12,24 @@ class Torre {
     string tipo;
     int ataque;
     int alcance;
+public:
+    int getAtaque() const {
+        return ataque;
+    }
+
+    void setAtaque(int ataque) {
+        Torre::ataque = ataque;
+    }
+
+    int getAlcance() const {
+        return alcance;
+    }
+
+    void setAlcance(int alcance) {
+        Torre::alcance = alcance;
+    }
+
+private:
     int x,y;
 public:
     void setX(int x) {
