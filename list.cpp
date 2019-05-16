@@ -404,6 +404,28 @@ void List<T>::save_file(string file)
     }
     out.close();
 }
+// Cambiar por posición del nodo
+template<typename T>
+void List<T>::change_by_position(T dato,int pos)
+{
+    Node<T> *temp = m_head;
+    Node<T> *temp1 = temp->next;
+
+    if (pos < 1 || pos > m_num_nodes) {
+        cout << "Out of Range " << endl;
+    } else if (pos == 1) {
+        m_head->setnode(dato);
+    } else {
+        for (int i = 2; i <= pos; i++) {
+            if (i == pos) {
+               temp1->setnode(dato);
+
+            }
+            temp = temp->next;
+            temp1 = temp1->next;
+        }
+    }
+}
 
 template<typename T>
 List<T>::~List() {}

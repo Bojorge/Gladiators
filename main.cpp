@@ -13,10 +13,11 @@ GtkWidget *window;
 GtkWidget *tablero, *lienzo, *caja,*barra,*texto, *label;
 GdkEvent click;
 int mousex,mousey;
-int gx=0;
-int gy=0;
 int ataq=0;
 int alcanc=0;
+typedef pair<int, int> Pair;
+
+Pair fin=make_pair(19,19);
 
 bool torre_seleccionada=false;
 static gboolean movimiento_mouse(GtkWidget *widget, GdkEvent *event, gpointer user_data);
@@ -24,13 +25,13 @@ static gboolean movimiento_mouse(GtkWidget *widget, GdkEvent *event, gpointer us
 static gboolean my_keypress_function(GtkWidget *widget, GdkEventKey *event, gpointer user_data);
 
 static gboolean btn_press_callback(GtkWidget *widget, GdkEventButton *event, gpointer user_data);
-static void actualizacion();
 
 List <Gladiador> gladiadores;
 List<Gladiador> gladiadoresTablero;
 List<Torre> torres;
 List<Torre> torresTablero;
 List<Gladiador> gladiadoresmuertos;
+List<int> pba;
 
 
 
@@ -38,13 +39,13 @@ AStar *camino=new AStar();
 
 typedef pair<int, int> Pair;
 
-int grid[FILA][COLUMNA] =
+int grid[COLUMNA][FILA] =
         {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -60,7 +61,6 @@ int grid[FILA][COLUMNA] =
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
-
         };
 
 Torre torr1;
@@ -81,6 +81,8 @@ Gladiador g4;
 
 
 void *coneccion(void*){
+
+
     /*
     while (true){
         for (int i=0; i<torres.size(); i++){
@@ -155,16 +157,22 @@ void *mensajes(void*) {
         if(gladiadoresTablero.size()>0) {
             //For que hace que los gladiadores del tablero se muevan
             for (int i = 0; i <= gladiadoresTablero.size()-1; i++) {
-                printf("entro a recorrer el tablero \n");
+                cout<<"gladiadores en tablero:"<<gladiadoresTablero.size()<<endl;
                 Gladiador glad = gladiadoresTablero.getbyposicion(i);
+                cout<<"glad "<< i <<endl;
                 int psx = glad.getX();
                 int psy = glad.getY();
-                gladiadoresTablero.getbyposicion(i).setX(gladiadoresTablero.getbyposicion(i).getX()+1);
+                Pair inic=make_pair(psx,psy);
+                Lista sig;
+                sig=camino->aStarSearch(grid,inic,fin);
+                glad.setX(sig.obtener_dato(2));
+                glad.setY(sig.obtener_dato(3));
+                sig.borrar_Dato(0);
+                sig.borrar_Dato(0);
+                gladiadoresTablero.change_by_position(glad,i+1);
                 cout<<gladiadoresTablero.getbyposicion(i).getX()<<endl;
                 cout<<gladiadoresTablero.getbyposicion(i).getY()<<endl;
-                gladiadoresTablero.getbyposicion(i).setY(gladiadoresTablero.getbyposicion(i).getY()+1);
-
-                sleep(2);
+                sleep(1);
             }
         }
         //FOR que agrega los gladiadores de la lista a el tablero
@@ -312,25 +320,13 @@ static gboolean movimiento_mouse(GtkWidget *widget, GdkEvent *event, gpointer us
         GdkEventMotion *e = (GdkEventMotion *) event;
         mousex = (guint) e->x;
         mousey = (guint) e->y;
-        //SE PONEN LAS LETRAS DE LAS PALABRAS PRELIMINARES
 
     }
 
 }
 
 gboolean my_keypress_function(GtkWidget *widget, GdkEventKey *event, gpointer data) {
-    if (event->keyval == GDK_KEY_a) {
-        gx=gx-1;
-    }
-    if (event->keyval == GDK_KEY_s) {
-        gy=gy+1;
-    }
-    if (event->keyval == GDK_KEY_d) {
-        gx=gx+1;
-    }
-    if (event->keyval == GDK_KEY_w) {
-        gy=gy-1;
-    }
+
 
 }
 //Funcion que permite el funcionamiento de los botones

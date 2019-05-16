@@ -17,6 +17,14 @@ Node<T>::Node(T data_)
     next = NULL;
 }
 
+
+
+template<typename T>
+void Node<T>::setnode(T dato)
+{
+    data = dato;
+}
+
 // Eliminar todos los Nodos
 template<typename T>
 void Node<T>::delete_all()

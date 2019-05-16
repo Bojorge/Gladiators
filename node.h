@@ -22,6 +22,9 @@ public:
      * @autor
      * @brief
      */
+
+    void setnode(T);
+
     void delete_all();
     /**
      * @title

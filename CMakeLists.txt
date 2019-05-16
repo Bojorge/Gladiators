@@ -19,7 +19,9 @@ add_executable (Gladiators main.cpp
         tablero.h
         AStar.h
         Gladiador.h
-        Torre.h)
+        Torre.h
+        Lista.h
+        Nodo.h)
 
 target_link_libraries (Gladiators ${GTK2_LIBRARIES})
 target_link_libraries (Gladiators ${CMAKE_THREAD_LIBS_INIT})

@@ -18,7 +18,7 @@ class List
 public:
     List();
     ~List();
-
+    void change_by_position(T,int);
     void add_head(T);
     void add_end(T);
     void add_sort(T);

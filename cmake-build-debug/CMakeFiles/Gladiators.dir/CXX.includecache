@@ -9,10 +9,20 @@
 /home/aaron/CLionProjects/Gladiators/AStar.h
 bits/stdc++.h
 -
+Lista.h
+/home/aaron/CLionProjects/Gladiators/Lista.h
+list.h
+/home/aaron/CLionProjects/Gladiators/list.h
 
 /home/aaron/CLionProjects/Gladiators/Gladiador.h
 iostream
 -
+
+/home/aaron/CLionProjects/Gladiators/Lista.h
+Nodo.h
+/home/aaron/CLionProjects/Gladiators/Nodo.h
+
+/home/aaron/CLionProjects/Gladiators/Nodo.h
 
 /home/aaron/CLionProjects/Gladiators/Torre.h
 string

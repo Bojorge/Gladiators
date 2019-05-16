@@ -8,6 +8,8 @@ CMakeFiles/Gladiators.dir/list.cpp.o: ../node.h
 
 CMakeFiles/Gladiators.dir/main.cpp.o: ../AStar.h
 CMakeFiles/Gladiators.dir/main.cpp.o: ../Gladiador.h
+CMakeFiles/Gladiators.dir/main.cpp.o: ../Lista.h
+CMakeFiles/Gladiators.dir/main.cpp.o: ../Nodo.h
 CMakeFiles/Gladiators.dir/main.cpp.o: ../Torre.h
 CMakeFiles/Gladiators.dir/main.cpp.o: ../list.cpp
 CMakeFiles/Gladiators.dir/main.cpp.o: ../list.h
