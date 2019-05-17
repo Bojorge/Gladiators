@@ -16,6 +16,8 @@ List<T>::List()
     m_head = NULL;
 }
 
+
+
 // Insertar al inicio
 template<typename T>
 void List<T>::add_head(T data_)

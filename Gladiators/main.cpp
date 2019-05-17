@@ -1,19 +1,26 @@
 #include "AStar.h"
 #include "Oleada.h"
-#include "Backtracking.h"
+#include "BackTracking.h"
+
 
 int main()
 {
-    //Backtracking bt;
-    //bt.solveKT();
+    BackTracking backTrack;
+    int maze[N][N] = { { 1, 0, 0, 0 },
+                       { 1, 1, 0, 1 },
+                       { 0, 1, 0, 0 },
+                       { 1, 1, 1, 1 } };
 
+    backTrack.solveMaze(maze);
 
+/*
     Oleada oleada;
     oleada.crearOleada(2);
 
     cout<<"\n \n";
 
     oleada.empezarRecorrido(oleada.getOleada());
+ */
 
     /*
     int grid[20][20] =
@@ -47,9 +54,6 @@ int main()
     pathfinding.aStarSearch(grid,inicio,fin);
 
     */
-
-
-
-
-    return(0);
+    return 0;
 }
+

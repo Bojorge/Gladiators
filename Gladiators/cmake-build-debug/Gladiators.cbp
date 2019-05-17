@@ -87,6 +87,9 @@
 		<Unit filename="/home/manuel/CLionProjects/Gladiators/AStar.h">
 			<Option target="Gladiators"/>
 		</Unit>
+		<Unit filename="/home/manuel/CLionProjects/Gladiators/BackTracking.h">
+			<Option target="Gladiators"/>
+		</Unit>
 		<Unit filename="/home/manuel/CLionProjects/Gladiators/Backtracking.h">
 			<Option target="Gladiators"/>
 		</Unit>
