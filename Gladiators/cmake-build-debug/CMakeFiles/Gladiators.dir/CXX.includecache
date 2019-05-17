@@ -16,6 +16,14 @@ Lista.h
 list.h
 /home/manuel/CLionProjects/Gladiators/list.h
 
+/home/manuel/CLionProjects/Gladiators/BackTrack.h
+iostream
+-
+zconf.h
+-
+Lista.h
+/home/manuel/CLionProjects/Gladiators/Lista.h
+
 /home/manuel/CLionProjects/Gladiators/BackTracking.h
 stdio.h
 -
@@ -75,6 +83,8 @@ Oleada.h
 /home/manuel/CLionProjects/Gladiators/Oleada.h
 BackTracking.h
 /home/manuel/CLionProjects/Gladiators/BackTracking.h
+BackTrack.h
+/home/manuel/CLionProjects/Gladiators/BackTrack.h
 
 /home/manuel/CLionProjects/Gladiators/node.cpp
 clocale
