@@ -142,13 +142,19 @@
 		<Unit filename="/home/aaron/CLionProjects/Gladiators/Gladiador.h">
 			<Option target="Gladiators"/>
 		</Unit>
+		<Unit filename="/home/aaron/CLionProjects/Gladiators/Json.h">
+			<Option target="Gladiators"/>
+		</Unit>
 		<Unit filename="/home/aaron/CLionProjects/Gladiators/Lista.h">
 			<Option target="Gladiators"/>
 		</Unit>
 		<Unit filename="/home/aaron/CLionProjects/Gladiators/Nodo.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/Torre.h">
+		<Unit filename="/home/aaron/CLionProjects/Gladiators/TCPclient.h">
+			<Option target="Gladiators"/>
+		</Unit>
+		<Unit filename="/home/aaron/CLionProjects/Gladiators/Torres.h">
 			<Option target="Gladiators"/>
 		</Unit>
 		<Unit filename="/home/aaron/CLionProjects/Gladiators/list.cpp">
