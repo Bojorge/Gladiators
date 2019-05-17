@@ -23,6 +23,20 @@ private:
     int x,y;
 
 public:
+    public:
+    Gladiador(string name, int edad,int prob,int gen,int inte,int cond,int fuerzasup,int fuerzainf,int x,int y) {
+        name = name;
+        edad = edad;
+        probSupervivencia = prob;
+        generaciones = gen;
+        inteligenciaEmocional = inte;
+        condFisica = cond;
+        fuerzaSuperior = fuerzasup;
+        fuerzaInferior = fuerzainf;
+        x = x;
+        y = y;
+   
+    }
     int getX(){
         return x;
     }
