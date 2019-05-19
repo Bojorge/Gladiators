@@ -34,7 +34,8 @@ public:
         camino.anadir_final(actualY);
         backtrack.anadir_final(actualX);
         backtrack.anadir_final(actualY);
-
+        cout << "\n--------------------------  coordenadas  (X, Y)  -----------------------\n";
+        cout << "\n***  INICIO  ***  >>> ("<<actualX<<", "<<actualY<<")\n";
         while(actualY <= finalY && actualX <= finalX) {
 
             if (actualY==finalY && actualX==finalX){
