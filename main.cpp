@@ -9,6 +9,7 @@
 #include <string>
 #include "TCPclient.h"
 #include "Json.h"
+#include "BackTrack.h"
 GtkWidget *window;
 GtkWidget *tablero, *lienzo, *caja,*barra,*texto, *label;
 GdkEvent click;
@@ -34,11 +35,11 @@ List<Gladiador> gladiadoresTablero;
 List<Torres> torres;
 List<Torres> torresTablero;
 List<Gladiador> gladiadoresmuertos;
-
-
-
-AStar *camino=new AStar();
-Json *serializador=new Json();
+Lista listaBT;
+Json serial;
+AStar caminoAstar;
+BackTrack caminobckt;
+int contadorBT=1;
 
 typedef pair<int, int> Pair;
 
@@ -77,10 +78,6 @@ Torres torr8;
 Torres torr9;
 Torres torr10;
 
-Gladiador g1;
-Gladiador g2;
-Gladiador g3;
-Gladiador g4;
 
 bool RecibirGladiadores=false;
 bool EnviarGladiadores=false;
@@ -89,27 +86,40 @@ int sockfd;
 TCPclient *cliente=new TCPclient();
 string mensaje;
 
-void *coneccion(void*){
-
+void *coneccion(void*) {
+    /*
+    //Se envia el POPULATIONS Y SE RECIBEN LAS DOS LISTAS
     cliente->iniciar();
-    sockfd=cliente->get_sockfd();
-    string pedir="$mecagoenelpapa";
-    cliente->enviarPaquete(sockfd,pedir);
-
-    //while(true) {
-        mensaje = cliente->pruebabuff();
-        serializador->split(mensaje,"-");
-        serializador->deserializarG(mensaje);
-        cout<<mensaje<<endl;
-    string pedir2="2";
-    cliente->enviarPaquete(sockfd,pedir2);
-        if(mensaje.compare("algo")==true){
-        //}
+    sockfd = cliente->get_sockfd();
+    string pedir = "1";
+    cliente->enviarPaquete(sockfd, pedir);
+    mensaje = cliente->pruebabuff();
+    vector<string> gen = serial.split(mensaje, "-");
+    string glads = gen[0];
+    vector<string> gds = serial.split(glads, ";");
+    for (int m = 0; m <= gds.size() - 1; m++) {
+        Gladiador gladiadorDes = serial.deserealizarGladiador(gds[m]);
+        cout << "agregando a " << gladiadorDes.getName() << endl;
+        gladiadores.add_head(gladiadorDes);
+        //SE ENVIA LA POBLACION DE GLADIADORES
+        string glsAenviar;
+        for (int k = 0; gladiadoresmuertos.size() - 1 <= k; k++) {
+            string gladAenviar = serial.serializadorGladiador(gladiadoresmuertos.getbyposicion(k));
+        }
+        cout << mensaje << endl;
+        //string pedir2="2";
+        //cliente->enviarPaquete(sockfd,pedir2);
+        if (mensaje.compare("algo") == true) {
+            //}
+        }
     }
+     */
 }
+
 void *controlComunicacion(void*){
+    /*
     while(true){
-        if(EnviarGladiadores==true){
+        if(EnviarGladiadores==8){
             //gladiadoresmuertos.Serializador
             //string paquete=gladiadoresserealizador
             //cliente->enviarPaquete(sockfd, paquete);
@@ -117,7 +127,7 @@ void *controlComunicacion(void*){
             sleep(1);
             RecibirGladiadores=true;
         }
-        if(RecibirGladiadores==true){
+        if(RecibirGladiadores==8){
             string paquete="GetGladiadores";
             cliente->enviarPaquete(sockfd, paquete);
             RecibirGladiadores=false;
@@ -126,20 +136,10 @@ void *controlComunicacion(void*){
 
 
     }
-
+*/
 }
 
-
-
 void *mensajes(void*) {
-
-    gladiadores.add_end(g1);
-    gladiadores.add_end(g2);
-    g3.setX(0);
-    g3.setY(5);
-    g3.setResistencia(10);
-    gladiadoresTablero.add_end(g3);
-    gladiadores.add_end(g4);
 
 
     torr7.setX(14);
@@ -171,10 +171,10 @@ void *mensajes(void*) {
     //sleep(1);
 
     while (true) {
-        if (enJuego==true){
+        if (enJuego==8){
             if (gladiadoresTablero.size() == 0) {
-                enJuego=false;
-                EnviarGladiadores=true;
+                //enJuego=false;
+                //EnviarGladiadores=true;
             }
         }
         //--------------------------------------------------------------------------------------------------------------------------------
@@ -183,63 +183,74 @@ void *mensajes(void*) {
 
         //--------------------------------------------------------------------------------------------------------------------------------
         //funcion que revisa si hay gladiadores muertos o en la meta
-        for (int i = 0; i <= gladiadoresTablero.size() - 1; i++) {
-            if (gladiadoresTablero.getbyposicion(i).getResistencia() >= 0) {//si un gladiador no tiene resistencia
-                Gladiador gld = gladiadoresTablero.getbyposicion(i);
-                gladiadoresmuertos.add_head(gld);
-                gladiadoresTablero.getbyposicion(i);
-            }
-            if (gladiadoresTablero.getbyposicion(i).getX() == 19 && gladiadoresTablero.getbyposicion(i).getY() == 19) {//si un gladiador llego a la meta
-                Gladiador gld = gladiadoresTablero.getbyposicion(i);
-                gladiadoresmuertos.add_head(gld);
-                gladiadoresTablero.getbyposicion(i);
-
-            }
-        }
-            if (gladiadoresTablero.size() > 0 && pathfinding==1) {//si hay gladiadores en tablero
-                //For que hace que los gladiadores del tablero se muevan
-                for (int i = 0; i <= gladiadoresTablero.size() - 1; i++) {
-                    cout << "gladiadores en tablero:" << gladiadoresTablero.size() << endl;
-                    Gladiador glad = gladiadoresTablero.getbyposicion(i);
-                    cout << "glad " << i << endl;
-                    int psx = glad.getX();
-                    int psy = glad.getY();
-                    Pair inic = make_pair(psx, psy);
-                    Lista sig;
-                    sig = camino->aStarSearch(grid, inic, fin); //se busca el paso siguiente que tiene que dar
-                    glad.setX(sig.obtener_dato(2));
-                    glad.setY(sig.obtener_dato(3));
-                    sig.borrar_Dato(0);
-                    sig.borrar_Dato(0);
-                    gladiadoresTablero.change_by_position(glad, i + 1); //se le inserta al gladiador la nueva posicion
-                    cout << gladiadoresTablero.getbyposicion(i).getX() << endl;
-                    cout << gladiadoresTablero.getbyposicion(i).getY() << endl;
-                    sleep(1);
-
-                    //FOR que agrega los gladiadores de la lista a el tablero
-                    if (gladiadores.size() > 0) {//si hay gkadiadores sin colocar
-                        Gladiador gl = gladiadores.getbyposicion(0);
-                        gl.setX(0);
-                        gl.setY(0);
-                        gladiadoresTablero.add_end(gl);
-                        gladiadores.del_by_position(1);
-                    }
-
+        //si hay gladiadores en tablero y la iteracion en Astar
+        if (gladiadoresTablero.size() >= 0 && pathfinding==1) {
+            //For que hace que los gladiadores del tablero se muevan
+            for (int i = 0; i <= gladiadoresTablero.size() - 1; i++) {
+                cout << "gladiadores en tablero:" << gladiadoresTablero.size() << endl;
+                Gladiador glad = gladiadoresTablero.getbyposicion(i);
+                cout << "glad " << i << endl;
+                int psx = glad.getX();
+                int psy = glad.getY();
+                Pair inic = make_pair(psx, psy);
+                Lista sig;
+                sig = caminoAstar.aStarSearch(grid, inic, fin); //se busca el paso siguiente que tiene que dar
+                glad.setX(sig.obtener_dato(2));
+                glad.setY(sig.obtener_dato(3));
+                sig.borrar_Dato(0);
+                sig.borrar_Dato(0);
+                gladiadoresTablero.change_by_position(glad, i + 1); //se le inserta al gladiador la nueva posicion
+                cout << gladiadoresTablero.getbyposicion(i).getX() << endl;
+                cout << gladiadoresTablero.getbyposicion(i).getY() << endl;
 
 
                 }
             }
-        if (gladiadoresTablero.size() > 0 && pathfinding==2) {
-            //si hay gladiadores en tablero
-            if (torres.size()==0){
-            if (gladiadores.size() > 0) {//si hay gkadiadores sin colocar
+        //FOR que agrega los gladiadores de la lista a el tablero
+        if (gladiadores.size() > 0 && pathfinding==1) {//si hay gladiadores sin colocar
+            printf("metiendo");
+            Gladiador gl = gladiadores.getbyposicion(0);
+            gl.setX(0);
+            gl.setY(0);
+            gladiadoresTablero.add_end(gl);
+            gladiadores.del_by_position(1);
+            sleep(1);
+        }
+        if (pathfinding==2){
+            if(torres.size()==0){
                 Gladiador gl = gladiadores.getbyposicion(0);
                 gl.setX(0);
                 gl.setY(0);
                 gladiadoresTablero.add_end(gl);
                 gladiadores.del_by_position(1);
             }
+            if(gladiadoresTablero.size()>0){
+                listaBT=caminobckt.backTracking(grid);
+                for (int i = 0; i <= gladiadoresTablero.size() - 1; i++) {
+                    Gladiador gdr=gladiadoresTablero.getbyposicion(i);
+                    int x=gdr.getX();
+                    int y=gdr.getY();
+                    int nextx=listaBT.obtener_dato(contadorBT-i);
+                    int nexty=listaBT.obtener_dato(contadorBT-i-1);
+                    gdr.setX(nextx);
+                    gdr.setY(nexty);
+                    gladiadoresTablero.change_by_position(gdr, i + 1); //se le inserta al gladiador la nueva posicion
+
+                }
+                contadorBT++;
+            }
         }
+
+        if (gladiadoresTablero.size() > 0 && pathfinding==2) {
+            //si hay gladiadores en tablero
+
+
+        }
+        if (torres.size()==0 && pathfinding==2){
+
+            if (gladiadores.size() > 0) {//si hay gladiadores sin colocar
+
+            }
         }
 
 
@@ -294,7 +305,6 @@ void *mensajes(void*) {
         label = gtk_label_new("Torres");
 
         gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
-
         gtk_widget_add_events(window, GDK_KEY_PRESS_MASK);
 
         gtk_window_set_title(GTK_WINDOW(window), " Tablero Gladiators");
@@ -400,7 +410,7 @@ void *mensajes(void*) {
             int matx = (mousex - 265) / 39;
             int maty = (mousey - 32) / 39;
             if (torre_seleccionada && grid[matx][maty] == 0) {
-                Torre t = torres.getbyposicion(torres.size() - 1);
+                Torres t = torres.getbyposicion(torres.size() - 1);
                 t.setX(matx);
                 t.setY(maty);
                 grid[matx][maty] = 1;
@@ -413,7 +423,7 @@ void *mensajes(void*) {
                 for (int i = 0; i <= torresTablero.size() - 1; i++) {
                     if (torresTablero.getbyposicion(i).getX() == matx &&
                         torresTablero.getbyposicion(i).getY() == maty) {
-                        ataq = torresTablero.getbyposicion(i).getAtaque();
+                        ataq = torresTablero.getbyposicion(i).getDano();
                         alcanc = torresTablero.getbyposicion(i).getAlcance();
                     }
                 }

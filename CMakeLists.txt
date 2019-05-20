@@ -17,13 +17,14 @@ add_executable (Gladiators main.cpp
         node.cpp
         node.h
         tablero.h
+        Json.h
         AStar.h
         Gladiador.h
         Lista.h
         Torres.h
         Nodo.h
         TCPclient.h
-        Json.h)
+        BackTrack.h)
 
 target_link_libraries (Gladiators ${GTK2_LIBRARIES})
 target_link_libraries (Gladiators ${CMAKE_THREAD_LIBS_INIT})

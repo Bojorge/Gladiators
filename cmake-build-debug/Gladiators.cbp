@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Sql\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/aaron/CLionProjects/Gladiators/cmake-build-debug"/>
+				<Option working_dir="/home/aaron/Desktop/Gladiators76/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/aaron/CLionProjects/Gladiators/cmake-build-debug"/>
+				<Option working_dir="/home/aaron/Desktop/Gladiators76/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Gladiators">
-				<Option output="/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Gladiators" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/aaron/CLionProjects/Gladiators/cmake-build-debug"/>
+				<Option output="/home/aaron/Desktop/Gladiators76/cmake-build-debug/Gladiators" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/aaron/Desktop/Gladiators76/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -70,15 +70,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 Gladiators"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 Gladiators"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Gladiators/fast">
-				<Option output="/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Gladiators" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/aaron/CLionProjects/Gladiators/cmake-build-debug"/>
+				<Option output="/home/aaron/Desktop/Gladiators76/cmake-build-debug/Gladiators" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/aaron/Desktop/Gladiators76/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -119,105 +119,108 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 Gladiators/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 Gladiators/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/aaron/CLionProjects/Gladiators/cmake-build-debug"/>
+				<Option working_dir="/home/aaron/Desktop/Gladiators76/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/aaron/CLionProjects/Gladiators/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/aaron/Desktop/Gladiators76/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/AStar.h">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/AStar.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/Gladiador.h">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/BackTrack.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/Json.h">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/Gladiador.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/Lista.h">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/Json.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/Nodo.h">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/Lista.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/TCPclient.h">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/Nodo.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/Torres.h">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/TCPclient.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/list.cpp">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/Torres.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/list.h">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/list.cpp">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/main.cpp">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/list.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/node.cpp">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/main.cpp">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/node.h">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/node.cpp">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/tablero.h">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/node.h">
 			<Option target="Gladiators"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/CMakeLists.txt">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/tablero.h">
+			<Option target="Gladiators"/>
+		</Unit>
+		<Unit filename="/home/aaron/Desktop/Gladiators76/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfig.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Sql\"/>
 		</Unit>
-		<Unit filename="/home/aaron/CLionProjects/Gladiators/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake">
+		<Unit filename="/home/aaron/Desktop/Gladiators76/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Sql\"/>
 		</Unit>
 	</Project>

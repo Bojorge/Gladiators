@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/aaron/CLionProjects/Gladiators/list.cpp" "/home/aaron/CLionProjects/Gladiators/cmake-build-debug/CMakeFiles/Gladiators.dir/list.cpp.o"
-  "/home/aaron/CLionProjects/Gladiators/main.cpp" "/home/aaron/CLionProjects/Gladiators/cmake-build-debug/CMakeFiles/Gladiators.dir/main.cpp.o"
-  "/home/aaron/CLionProjects/Gladiators/node.cpp" "/home/aaron/CLionProjects/Gladiators/cmake-build-debug/CMakeFiles/Gladiators.dir/node.cpp.o"
+  "/home/aaron/Desktop/Gladiators76/list.cpp" "/home/aaron/Desktop/Gladiators76/cmake-build-debug/CMakeFiles/Gladiators.dir/list.cpp.o"
+  "/home/aaron/Desktop/Gladiators76/main.cpp" "/home/aaron/Desktop/Gladiators76/cmake-build-debug/CMakeFiles/Gladiators.dir/main.cpp.o"
+  "/home/aaron/Desktop/Gladiators76/node.cpp" "/home/aaron/Desktop/Gladiators76/cmake-build-debug/CMakeFiles/Gladiators.dir/node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
