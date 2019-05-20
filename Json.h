@@ -1,9 +1,9 @@
 //
-// Created by gerom on 16/05/19.
+// Created by gerom on 19/05/19.
 //
 
-#ifndef GLADIATORS_JSON_H
-#define GLADIATORS_JSON_H
+#ifndef UNTITLED1_JSON_H
+#define UNTITLED1_JSON_H
 #include "Gladiador.h"
 //#include "list.h"
 //#include "list.cpp"
@@ -16,6 +16,9 @@ using namespace std;
 
 
 class Json{
+
+    vector<Gladiador> listaGladiadores;
+    vector<Torres> listaTorres;
 
 public:
     string serializadorGladiador(Gladiador gla){
@@ -33,8 +36,8 @@ public:
                 "\"y\":"+ to_string(gla.getY()) + "}";
 
         return String;
-      }
-     string serializarTorreta(Torres tor) {
+    }
+    string serializarTorreta(Torres tor) {
         string string =
                 "{\"name\": " + tor.getNombre() + "\"" + "," +
                 "\"generaciones\": " + to_string(tor.generaciones) + "," +
@@ -103,60 +106,60 @@ public:
         return n;
     }*/
 
-     /*List<Torres> deserializarT(string s){
-        List<Torres> n;
-        string na = "";
-        int ge = 0; int di = 0; int ds = 0;int po = 0;
-        int ti = 0;int fl = 0;int vl = 0;int at = 0;
-        vector<string> accion = split (s, ";");
+    /*List<Torres> deserializarT(string s){
+       List<Torres> n;
+       string na = "";
+       int ge = 0; int di = 0; int ds = 0;int po = 0;
+       int ti = 0;int fl = 0;int vl = 0;int at = 0;
+       vector<string> accion = split (s, ";");
 
-        int cont = 1;
-        for(int i = 0; i < accion.size(); i++) {
-            string r = accion[i];
-            vector<string> torreta = split (r, ",");
+       int cont = 1;
+       for(int i = 0; i < accion.size(); i++) {
+           string r = accion[i];
+           vector<string> torreta = split (r, ",");
 
-            for(int j = 0; j < torreta.size();j++ ){
-                string h = torreta[j];
-                vector<string> parte = split (h, " ");
+           for(int j = 0; j < torreta.size();j++ ){
+               string h = torreta[j];
+               vector<string> parte = split (h, " ");
 
-                if (cont == 1) {
-                    string div1 = ( parte[1]);
-                    string div2 = (parte[2]);
-                    vector<string> div1name = split (div1, "\"");
-                    vector<string> div2name = split (div2, "\"");
-                    na = div1name[1] + " " + div2name[0];
-                }
-                if(cont == 2) {int ge = std::stoi(parte[1]);}
-                if(cont == 3) {int di = std::stoi(parte[1]);}
-                if(cont == 4) {int ds = std::stoi(parte[1]);}
-                if(cont == 5) {int po = std::stoi(parte[1]);}
-                if(cont == 6) {int ti = std::stoi(parte[1]);}
-                if(cont == 7) {int fl = std::stoi(parte[1]);}
-                if(cont == 8) {int vl = std::stoi(parte[1]);}
-                if(cont == 9) {
-                    string u = parte[1];
-                    vector<string> o = split (u, "}");
+               if (cont == 1) {
+                   string div1 = ( parte[1]);
+                   string div2 = (parte[2]);
+                   vector<string> div1name = split (div1, "\"");
+                   vector<string> div2name = split (div2, "\"");
+                   na = div1name[1] + " " + div2name[0];
+               }
+               if(cont == 2) {int ge = std::stoi(parte[1]);}
+               if(cont == 3) {int di = std::stoi(parte[1]);}
+               if(cont == 4) {int ds = std::stoi(parte[1]);}
+               if(cont == 5) {int po = std::stoi(parte[1]);}
+               if(cont == 6) {int ti = std::stoi(parte[1]);}
+               if(cont == 7) {int fl = std::stoi(parte[1]);}
+               if(cont == 8) {int vl = std::stoi(parte[1]);}
+               if(cont == 9) {
+                   string u = parte[1];
+                   vector<string> o = split (u, "}");
 
-                    int at = std::stoi(o[0]);
+                   int at = std::stoi(o[0]);
 
-                }
-                cont++;
-            }
-            Torres g;
-            g.setNombre(na);
-            g.setGeneraciones(ge);
-            g.setDanoInferior(di);
-            g.setDanoSuperior(ds);
-            g.setPotencia(po);
-            g.setTipobala(ti);
-            g.setFuerzalanzador(fl);
+               }
+               cont++;
+           }
+           Torres g;
+           g.setNombre(na);
+           g.setGeneraciones(ge);
+           g.setDanoInferior(di);
+           g.setDanoSuperior(ds);
+           g.setPotencia(po);
+           g.setTipobala(ti);
+           g.setFuerzalanzador(fl);
 
 
-            n.add_end(g);
-            cont = 1;
-        }
-        return n;
-    }*/
+           n.add_end(g);
+           cont = 1;
+       }
+       return n;
+   }*/
 
     vector<string> split (string s, string delimiter) {
         size_t pos_start = 0, pos_end, delim_len = delimiter.length();
@@ -172,7 +175,7 @@ public:
         res.push_back (s.substr (pos_start));
         return res;
     }
-    Torres desearilzarTorre(string tor){
+    void desearilzarTorre(string tor){
         string na = "";
         string r = tor;
         int ge = 0; int di = 0; int ds = 0;int po = 0;
@@ -215,9 +218,10 @@ public:
         g.setFuerzalanzador(fl);
         g.setVelocidadlanzador(vl);
         cont = 1;
-        return  g;
+        listaTorres.push_back(g);
+        return ;
     }
-    Gladiador deserealizarGladiador(string glad){
+    void deserealizarGladiador(string glad){
         string na = "";
         int ed = 0; int ps = 0; int ge = 0;int ie = 0;
         int cf = 0;int fs = 0;int fi = 0;int x = 0;int y = 0;
@@ -246,7 +250,7 @@ public:
             if(cont == 11) {
                 string u = parte[1];
                 vector<string> o = split (u, "}");
-                 y = std::stoi(o[0]);
+                y = std::stoi(o[0]);
             }
             cont++;
         }
@@ -262,13 +266,12 @@ public:
         g.setX(x);
         g.setY(y);
         cont = 1;
-        return g;
+        listaGladiadores.push_back(g);
+        return;
 
     }
 
+
 };
 
-
-
-
-#endif //GLADIATORS_JSON_H
+#endif //UNTITLED1_JSON_H
