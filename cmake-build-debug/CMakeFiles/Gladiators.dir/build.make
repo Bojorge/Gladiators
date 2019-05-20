@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/69/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/70/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/69/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/70/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aaron/CLionProjects/Gladiators
+CMAKE_SOURCE_DIR = /home/aaron/Desktop/Gladiators76
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aaron/CLionProjects/Gladiators/cmake-build-debug
+CMAKE_BINARY_DIR = /home/aaron/Desktop/Gladiators76/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Gladiators.dir/depend.make
@@ -59,28 +59,62 @@ include CMakeFiles/Gladiators.dir/flags.make
 
 CMakeFiles/Gladiators.dir/main.cpp.o: CMakeFiles/Gladiators.dir/flags.make
 CMakeFiles/Gladiators.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aaron/CLionProjects/Gladiators/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Gladiators.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Gladiators.dir/main.cpp.o -c /home/aaron/CLionProjects/Gladiators/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aaron/Desktop/Gladiators76/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Gladiators.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Gladiators.dir/main.cpp.o -c /home/aaron/Desktop/Gladiators76/main.cpp
 
 CMakeFiles/Gladiators.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Gladiators.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aaron/CLionProjects/Gladiators/main.cpp > CMakeFiles/Gladiators.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aaron/Desktop/Gladiators76/main.cpp > CMakeFiles/Gladiators.dir/main.cpp.i
 
 CMakeFiles/Gladiators.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Gladiators.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aaron/CLionProjects/Gladiators/main.cpp -o CMakeFiles/Gladiators.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aaron/Desktop/Gladiators76/main.cpp -o CMakeFiles/Gladiators.dir/main.cpp.s
+
+CMakeFiles/Gladiators.dir/list.cpp.o: CMakeFiles/Gladiators.dir/flags.make
+CMakeFiles/Gladiators.dir/list.cpp.o: ../list.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aaron/Desktop/Gladiators76/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Gladiators.dir/list.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Gladiators.dir/list.cpp.o -c /home/aaron/Desktop/Gladiators76/list.cpp
+
+CMakeFiles/Gladiators.dir/list.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Gladiators.dir/list.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aaron/Desktop/Gladiators76/list.cpp > CMakeFiles/Gladiators.dir/list.cpp.i
+
+CMakeFiles/Gladiators.dir/list.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Gladiators.dir/list.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aaron/Desktop/Gladiators76/list.cpp -o CMakeFiles/Gladiators.dir/list.cpp.s
+
+CMakeFiles/Gladiators.dir/node.cpp.o: CMakeFiles/Gladiators.dir/flags.make
+CMakeFiles/Gladiators.dir/node.cpp.o: ../node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aaron/Desktop/Gladiators76/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Gladiators.dir/node.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Gladiators.dir/node.cpp.o -c /home/aaron/Desktop/Gladiators76/node.cpp
+
+CMakeFiles/Gladiators.dir/node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Gladiators.dir/node.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aaron/Desktop/Gladiators76/node.cpp > CMakeFiles/Gladiators.dir/node.cpp.i
+
+CMakeFiles/Gladiators.dir/node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Gladiators.dir/node.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aaron/Desktop/Gladiators76/node.cpp -o CMakeFiles/Gladiators.dir/node.cpp.s
 
 # Object files for target Gladiators
 Gladiators_OBJECTS = \
-"CMakeFiles/Gladiators.dir/main.cpp.o"
+"CMakeFiles/Gladiators.dir/main.cpp.o" \
+"CMakeFiles/Gladiators.dir/list.cpp.o" \
+"CMakeFiles/Gladiators.dir/node.cpp.o"
 
 # External object files for target Gladiators
 Gladiators_EXTERNAL_OBJECTS =
 
 Gladiators: CMakeFiles/Gladiators.dir/main.cpp.o
+Gladiators: CMakeFiles/Gladiators.dir/list.cpp.o
+Gladiators: CMakeFiles/Gladiators.dir/node.cpp.o
 Gladiators: CMakeFiles/Gladiators.dir/build.make
+Gladiators: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.9.5
+Gladiators: /usr/lib/x86_64-linux-gnu/libQt5Sql.so.5.9.5
+Gladiators: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.9.5
+Gladiators: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.9.5
 Gladiators: CMakeFiles/Gladiators.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aaron/CLionProjects/Gladiators/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Gladiators"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aaron/Desktop/Gladiators76/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Gladiators"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Gladiators.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -93,6 +127,6 @@ CMakeFiles/Gladiators.dir/clean:
 .PHONY : CMakeFiles/Gladiators.dir/clean
 
 CMakeFiles/Gladiators.dir/depend:
-	cd /home/aaron/CLionProjects/Gladiators/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aaron/CLionProjects/Gladiators /home/aaron/CLionProjects/Gladiators /home/aaron/CLionProjects/Gladiators/cmake-build-debug /home/aaron/CLionProjects/Gladiators/cmake-build-debug /home/aaron/CLionProjects/Gladiators/cmake-build-debug/CMakeFiles/Gladiators.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/aaron/Desktop/Gladiators76/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aaron/Desktop/Gladiators76 /home/aaron/Desktop/Gladiators76 /home/aaron/Desktop/Gladiators76/cmake-build-debug /home/aaron/Desktop/Gladiators76/cmake-build-debug /home/aaron/Desktop/Gladiators76/cmake-build-debug/CMakeFiles/Gladiators.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Gladiators.dir/depend
 

@@ -19,24 +19,29 @@ private:
     int condFisica;
     int fuerzaSuperior;
     int fuerzaInferior;
-    int resistencia = (probSupervivencia+generaciones+inteligenciaEmocional+condFisica+fuerzaSuperior+fuerzaInferior)/6;
     int x,y;
+    int resistencia;
+    int pos;
+public:
+    int getPos() const {
+        return pos;
+    }
+
+    void setPos(int pos) {
+        Gladiador::pos = pos;
+    }
 
 public:
-    public:
-    Gladiador(string name, int edad,int prob,int gen,int inte,int cond,int fuerzasup,int fuerzainf,int x,int y) {
-        name = name;
-        edad = edad;
-        probSupervivencia = prob;
-        generaciones = gen;
-        inteligenciaEmocional = inte;
-        condFisica = cond;
-        fuerzaSuperior = fuerzasup;
-        fuerzaInferior = fuerzainf;
-        x = x;
-        y = y;
-   
+    int getResistencia() const {
+        return resistencia;
     }
+
+    void setResistencia(int resistencia) {
+        Gladiador::resistencia = resistencia;
+    }
+
+
+public:
     int getX(){
         return x;
     }
@@ -105,13 +110,6 @@ public:
         Gladiador::fuerzaInferior = x;
 
     }
-    int getResistencia(){
-        return resistencia;
-    }
-    void setResistencia(int x){
-        Gladiador ::resistencia = x;
-    }
-        
 
 };
 

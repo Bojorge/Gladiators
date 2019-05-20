@@ -10,10 +10,9 @@ using namespace std;
 
 
 class Torres {
-
+public:
 
     string nombre;
-    int generaciones;
     int danoInferior;
     int danoSuperior;
     int potencia;
@@ -23,6 +22,24 @@ class Torres {
     int altotorre;
     int dano = (generaciones+danoInferior+danoSuperior+potencia+tipobala-altotorre)/4;
     int alcance = (fuerzalanzador+velocidadlanzador+altotorre-tipobala)/2;
+    int X;
+    int Y;
+
+    int getX() const {
+        return X;
+    }
+
+    void setX(int x) {
+        X = x;
+    }
+
+    int getY() const {
+        return Y;
+    }
+
+    void setY(int y) {
+        Y = y;
+    }
 
 
 public:
@@ -114,6 +131,7 @@ public:
         Torres::alcance = alcance;
     }
 
+    int generaciones;
 };
 
 
