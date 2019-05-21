@@ -43,7 +43,7 @@ public:
 
 
 public:
-    const string &getNombre() const {
+    const string getNombre() const {
         return nombre;
     }
 

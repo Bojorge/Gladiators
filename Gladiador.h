@@ -22,6 +22,16 @@ private:
     int x,y;
     int resistencia;
     int pos;
+    bool atacado=false;
+public:
+    bool setAtacado() const {
+        return atacado;
+    }
+
+    void setAtacado(bool atacado) {
+        Gladiador::atacado = atacado;
+    }
+
 public:
     int getPos() const {
         return pos;

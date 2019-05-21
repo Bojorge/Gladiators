@@ -17,7 +17,7 @@
 
 #include <arpa/inet.h>
 
-#define MAX 1000000
+#define MAX 1000000000
 #define PORT 6611
 #define SA struct sockaddr
 
@@ -104,7 +104,7 @@ public:
 
         // assign IP, PORT
         servaddr.sin_family = AF_INET;
-        servaddr.sin_addr.s_addr = inet_addr("192.168.100.25");
+        servaddr.sin_addr.s_addr = inet_addr("192.168.100.19");
         servaddr.sin_port = htons(PORT);
 
         // connect the client socket to server socket
