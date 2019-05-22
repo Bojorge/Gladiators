@@ -11,7 +11,7 @@
 #include "Lista.h"
 
 using namespace std;
-
+//clase que se encarga de realizar el backtraking en el mapa para que el gladaiador llegue a su destino
 class BackTrack{
     Lista camino;
     Lista backtrack;
@@ -28,6 +28,9 @@ class BackTrack{
 
 
 public:
+    //metodo que retorna lista de posiciones donde el gladiador llega a su destino utilizando el grid como mapa.
+    //Lista camino almacena todas las posiciones por las qyue paso el Gladiador, sean las posiciones corrretas o no
+    //Listabacktrak es la lista de posicones del camino correcto del Gladiador
     Lista backTracking(int grid[20][20] ){
         camino.anadir_final(actualX);
         camino.anadir_final(actualY);
