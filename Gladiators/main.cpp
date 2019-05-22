@@ -57,7 +57,8 @@ int main()
 
             };
 
-    backTrack.backTracking(grid);
+    backTrack.setGrid(grid);
+    //backTrack.backTracking(grid);
 
 /*
     Oleada oleada;

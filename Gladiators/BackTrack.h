@@ -12,20 +12,34 @@
 
 using namespace std;
 
-class BackTrack{
+class BackTrack {
     Lista camino;
     Lista backtrack;
-    int inicioX=0;
-    int inicioY=0;
-    int finalX=19;
-    int finalY=19;
-    int actualX=inicioX;
-    int actualY=inicioY;
+    int inicioX = 0;
+    int inicioY = 0;
+    int finalX = 19;
+    int finalY = 19;
+    int actualX = inicioX;
+    int actualY = inicioY;
+    int grid[20][20];
 
     // habilitado = 0
     // bloqueado =1
 
+public:
+    void setGrid(int matriz[20][20]) {
 
+        for (int i = 0; i < 20; i++) {
+
+
+            for (int h = 0; h < 20; h++) {
+                grid[i][h] = matriz[h][i];
+
+                cout<<grid[i][h]<<" ";
+            }
+            cout<<endl;
+        }
+    }
 
 public:
     Lista backTracking(int grid[20][20]){
