@@ -10,15 +10,16 @@
 #include "Torres.h"
 #include <vector>
 #include <bits/stdc++.h>
+//#include "list.h"
+//#include "list.cpp"
 
 using namespace std;
 
 
-//clase que serealiza y deserealiza los objetos tipo Torre y tipo Gladiador
+
 class Json{
 
 public:
-    //metodo que serializa un objeto Gladiador a objeto Json para ser pasado entre el sevidor y cliente
     string serializadorGladiador(Gladiador gla){
         string String =
                 "{\"name\": \""+gla.getName() + "\"" +"," +
@@ -35,7 +36,6 @@ public:
 
         return String;
       }
-    //metodo que serealiza un objeto Torre a objeto Json para ser pasado entre servidor y clientes
      string serializarTorreta(Torres tor) {
         string string =
                 "{\"name\": \""+ tor.getNombre() + "\"" + "," +
@@ -51,7 +51,115 @@ public:
                 "\"alcance\": " + to_string(tor.alcance) + "}";
         return string;
     }
-    //metodo split que se encarga de serparar un string cada vez que aparezca un string llamado delimitador
+/*
+     List<Gladiador> deserializarG(string s){
+        List<Gladiador> n;
+        string na = "";
+        int ed = 0; int ps = 0; int ge = 0;int ie = 0;
+        int cf = 0;int fs = 0;int fi = 0;int x = 0;int y = 0;
+        vector<string> accion = split (s, ";");
+        int cont = 1;
+        for(int i = 0; i < accion.size(); i++) {
+            string r = accion[i];
+            vector<string> gladiador = split (r, ",");
+            for(int j = 0; j < gladiador.size();j++ ){
+                string h = gladiador[j];
+                vector<string> parte = split (h, " ");
+                if (cont == 1) {
+                    string div1 = ( parte[1]);
+                    string div2 = (parte[2]);
+                    vector<string> div1name = split (div1, "\"");
+                    vector<string> div2name = split (div2, "\"");
+                    na = div1name[1] + " " + div2name[0];
+                }
+                if(cont == 2) { ed = std::stoi(parte[1]);}
+                if(cont == 3) { ps = std::stoi(parte[1]);}
+                if(cont == 4) { ge = std::stoi(parte[1]);}
+                if(cont == 5) { ie = std::stoi(parte[1]);}
+                if(cont == 6) { cf = std::stoi(parte[1]);}
+                if(cont == 7) { fs = std::stoi(parte[1]);}
+                if(cont == 8) { fi = std::stoi(parte[1]);}
+                if(cont == 9) {}
+                if(cont == 10) { y = std::stoi(parte[1]);}
+                if(cont == 11) {
+                    string u = parte[1];
+                    vector<string> o = split (u, "}");
+                    y = std::stoi(o[0]);
+                }
+                cont++;
+            }
+            Gladiador g;
+            g.setName(na);
+            g.setEdad(ed);
+            g.setprobSupervivencia(ps);
+            g.setGeneraciones(ge);
+            g.setinteligenciaEmocional(ie);
+            g.setcondFisica(cf);
+            g.setfuerzaSuperior(fs);
+            g.setfuerzaInferior(fi);
+            g.setX(x);
+            g.setY(y);
+            n.add_end(g);
+            cont = 1;
+        }
+        return n;
+    }*/
+
+     /*List<Torres> deserializarT(string s){
+        List<Torres> n;
+        string na = "";
+        int ge = 0; int di = 0; int ds = 0;int po = 0;
+        int ti = 0;int fl = 0;int vl = 0;int at = 0;
+        vector<string> accion = split (s, ";");
+
+        int cont = 1;
+        for(int i = 0; i < accion.size(); i++) {
+            string r = accion[i];
+            vector<string> torreta = split (r, ",");
+
+            for(int j = 0; j < torreta.size();j++ ){
+                string h = torreta[j];
+                vector<string> parte = split (h, " ");
+
+                if (cont == 1) {
+                    string div1 = ( parte[1]);
+                    string div2 = (parte[2]);
+                    vector<string> div1name = split (div1, "\"");
+                    vector<string> div2name = split (div2, "\"");
+                    na = div1name[1] + " " + div2name[0];
+                }
+                if(cont == 2) {int ge = std::stoi(parte[1]);}
+                if(cont == 3) {int di = std::stoi(parte[1]);}
+                if(cont == 4) {int ds = std::stoi(parte[1]);}
+                if(cont == 5) {int po = std::stoi(parte[1]);}
+                if(cont == 6) {int ti = std::stoi(parte[1]);}
+                if(cont == 7) {int fl = std::stoi(parte[1]);}
+                if(cont == 8) {int vl = std::stoi(parte[1]);}
+                if(cont == 9) {
+                    string u = parte[1];
+                    vector<string> o = split (u, "}");
+
+                    int at = std::stoi(o[0]);
+
+                }
+                cont++;
+            }
+            Torres g;
+            g.setNombre(na);
+            g.setGeneraciones(ge);
+            g.setDanoInferior(di);
+            g.setDanoSuperior(ds);
+            g.setPotencia(po);
+            g.setTipobala(ti);
+            g.setFuerzalanzador(fl);
+
+
+            n.add_end(g);
+            cont = 1;
+        }
+        return n;
+    }*/
+
     vector<string> split (string s, string delimiter) {
         size_t pos_start = 0, pos_end, delim_len = delimiter.length();
         string token;
@@ -66,7 +174,6 @@ public:
         res.push_back (s.substr (pos_start));
         return res;
     }
-    //metodo que deserealizado un objeto Json en String y lo convierte a un objeto Torre con todos sus atributos
     Torres desearilzarTorre(string tor){
         string na = "";
         string r = tor;
@@ -116,8 +223,25 @@ public:
         cont = 1;
         return  g;
     }
-    
-    //metodo que deserealizado un objeto Json en String y lo convierte a un objeto Gladiador con todos sus atributos
+    /*
+ string serializarListaG(List<Gladiador> list) {
+        string generacion0Gladiadores = "$";
+        List<Gladiador> genCeroG = list;
+        for ( int i = 0; i < (genCeroG.size()-1); i++) {
+            generacion0Gladiadores = generacion0Gladiadores + serializadorGladiador(genCeroG.getbyposicion(i))+ ";" ;
+        }
+        generacion0Gladiadores = generacion0Gladiadores + serializadorGladiador(genCeroG.getbyposicion(genCeroG.size()-1));
+        return generacion0Gladiadores;
+    }
+ string serializarListaT(List<Torres> list) {
+        string generacion0Torreta = "";
+        List<Torres> genCeroT = list;
+        for ( int i = 0; i < (genCeroT.size()-1); i++) {
+            generacion0Torreta = generacion0Torreta + serializarTorreta(genCeroT.getbyposicion(i))+ ";" ;
+        }
+        generacion0Torreta = generacion0Torreta + serializarTorreta(genCeroT.getbyposicion(genCeroT.size()-1));
+        return generacion0Torreta;
+    }*/
     Gladiador deserealizarGladiador(string glad){
         string na = "";
         int ed = 0; int ps = 0; int ge = 0;int ie = 0;

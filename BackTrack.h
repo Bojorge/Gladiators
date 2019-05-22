@@ -5,72 +5,83 @@
 #ifndef GLADIATORS_BACKTRACK_H
 #define GLADIATORS_BACKTRACK_H
 
-
 #include <iostream>
 #include <zconf.h>
 #include "Lista.h"
 
 using namespace std;
-//clase que se encarga de realizar el backtraking en el mapa para que el gladaiador llegue a su destino
-class BackTrack{
+
+class BackTrack {
     Lista camino;
     Lista backtrack;
-    int inicioX=0;
-    int inicioY=0;
-    int finalX=19;
-    int finalY=19;
-    int actualX=inicioX;
-    int actualY=inicioY;
+    int inicioX = 0;
+    int inicioY = 0;
+    int finalX = 19;
+    int finalY = 19;
+    int actualX = inicioX;
+    int actualY = inicioY;
+    int grid[20][20];
 
     // habilitado = 0
     // bloqueado =1
 
+public:
+    void setGrid(int matriz[20][20]) {
 
+        for (int i = 0; i < 20; i++) {
+
+
+            for (int h = 0; h < 20; h++) {
+                grid[i][h] = matriz[h][i];
+
+                //cout<<grid[i][h]<<" ";
+            }
+            //cout<<endl;
+        }
+    }
 
 public:
-    //metodo que retorna lista de posiciones donde el gladiador llega a su destino utilizando el grid como mapa.
-    //Lista camino almacena todas las posiciones por las qyue paso el Gladiador, sean las posiciones corrretas o no
-    //Listabacktrak es la lista de posicones del camino correcto del Gladiador
-    Lista backTracking(int grid[20][20] ){
+    Lista backTracking(int grid1[20][20]){
+
+        this->setGrid(grid1);
         camino.anadir_final(actualX);
         camino.anadir_final(actualY);
         backtrack.anadir_final(actualX);
         backtrack.anadir_final(actualY);
         //cout << "\n--------------------------  coordenadas  (X, Y)  -----------------------\n";
-        //cout << "\n***  INICIO  ***  >>> ("<<actualX<<", "<<actualY<<")\n";
+        //cout << "\n**  INICIO  **  >>> ("<<actualX<<", "<<actualY<<")\n";
         while(actualY <= finalY && actualX <= finalX) {
 
             if (actualY==finalY && actualX==finalX){
-                cout << "\n***  El gladiador llego a su destino  ***  >>> ("<<actualX<<", "<<actualY<<")\n";
-                camino.print_lista();
+                //cout << "\n**  El gladiador llego a su destino  **  >>> ("<<actualX<<", "<<actualY<<")\n";
                 return camino;
             }
             else if (actualY==finalY && actualX<finalX){
-                if(grid[actualX][actualY+1]==0){
-                    actualY+=1;
+                if(grid[actualY][actualX+1]==0){
+                    actualX+=1;
                     camino.anadir_final(actualX);
                     camino.anadir_final(actualY);
                     backtrack.anadir_final(actualX);
                     backtrack.anadir_final(actualY);
-                    //cout << "\n llego al borde inferior pero no ha llegado al objetivo  ***  se movera hacia la derecha  ***  >>> ("<<actualX<<", "<<actualY<<")\n";
+                    cout << "\n llego al borde inferior pero no ha llegado al objetivo  *  se movera hacia la derecha  *  >>> ("<<actualX<<", "<<actualY<<")\n";
                     //sleep(1);
-                } else if(grid[actualX][actualY+1]!=0){
-                    while(grid[actualX][actualY+1]!=0){
-                        if(actualX==0){
+                } else if(grid[actualY][actualX+1]!=0){
+                    while(grid[actualY][actualX+1]!=0){
+                        if(actualY==0){
                             //cout << "\n -----  no hay camino  ----- \n";
                             //sleep(1);
                             return camino;
-                        } else if (grid[actualX-1][actualY+1] == 0) {
-                            actualX-=1;
-                            actualY+=1;
+                        } else if (grid[actualY-1][actualX+1] == 0) {
+                            actualY-=1;
+                            actualX+=1;
                             camino.anadir_final(actualX);
                             camino.anadir_final(actualY);
                             backtrack.anadir_final(actualX);
                             backtrack.anadir_final(actualY);
                             //cout << "\n se mueve en diagonal hacia arriba y hacia la derecha  >>> ("<<actualX<<", "<<actualY<<")\n";
                             //sleep(1);
-                        } else if (grid[actualX-1][actualY] == 0) {
-                            actualX -= 1;
+                        } else if (grid[actualY-1][actualX] == 0) {
+                            actualY -= 1;
                             camino.anadir_final(actualX);
                             camino.anadir_final(actualY);
                             backtrack.anadir_final(actualX);
@@ -81,31 +92,31 @@ public:
                     }
                 }
             } else if (actualX==finalX && actualY<finalY){
-                if(grid[actualX+1][actualY]==0){
-                    actualX+=1;
+                if(grid[actualY+1][actualX]==0){
+                    actualY+=1;
                     camino.anadir_final(actualX);
                     camino.anadir_final(actualY);
                     backtrack.anadir_final(actualX);
                     backtrack.anadir_final(actualY);
-                    //cout << "\n llego al borde derecho pero no ha llegado al objetivo  ***  se movera hacia abajo  ***   >>> ("<<actualX<<", "<<actualY<<")\n";
+                    //cout << "\n llego al borde derecho pero no ha llegado al objetivo  *  se movera hacia abajo  *   >>> ("<<actualX<<", "<<actualY<<")\n";
                     //sleep(1);
-                } else if(grid[actualX+1][actualY]!=0){
-                    while(grid[actualX+1][actualY]!=0){
-                        if(actualY==0){
+                } else if(grid[actualY+1][actualX]!=0){
+                    while(grid[actualY+1][actualX]!=0){
+                        if(actualX==0){
                             //cout << "\n -----  no hay camino  ----- \n";
                             //sleep(1);
                             return camino;
-                        } else if (grid[actualX+1][actualY-1] == 0) {
-                            actualX+=1;
-                            actualY-=1;
+                        } else if (grid[actualY+1][actualX-1] == 0) {
+                            actualY+=1;
+                            actualX-=1;
                             camino.anadir_final(actualX);
                             camino.anadir_final(actualY);
                             backtrack.anadir_final(actualX);
                             backtrack.anadir_final(actualY);
                             //cout << "\n se mueve en diagonal hacia abajo y hacia la izquierda   >>> ("<<actualX<<", "<<actualY<<")\n";
                             //sleep(1);
-                        } else if (grid[actualX][actualY-1] == 0) {
-                            actualY -= 1;
+                        } else if (grid[actualY][actualX-1] == 0) {
+                            actualX -= 1;
                             camino.anadir_final(actualX);
                             camino.anadir_final(actualY);
                             backtrack.anadir_final(actualX);
@@ -116,7 +127,7 @@ public:
                     }
                 }
             } else if(actualY<finalY && actualX<finalX) {
-                if (grid[actualX + 1][actualY + 1] == 0) {
+                if (grid[actualY + 1][actualX + 1] == 0) {
                     actualX += 1;
                     actualY += 1;
                     camino.anadir_final(actualX);
@@ -125,16 +136,16 @@ public:
                     backtrack.anadir_final(actualY);
                     //cout << "\n se mueve en diagonal hacia abajo y hacia la derecha   >>> ("<<actualX<<", "<<actualY<<")\n";
                     //sleep(1);
-                } else if (grid[actualX][actualY + 1] == 0) {
-                    actualY += 1;
+                } else if (grid[actualY][actualX + 1] == 0) {
+                    actualX += 1;
                     camino.anadir_final(actualX);
                     camino.anadir_final(actualY);
                     backtrack.anadir_final(actualX);
                     backtrack.anadir_final(actualY);
                     //cout << "\n se mueve hacia la derecha   >>> ("<<actualX<<", "<<actualY<<")\n";
                     //sleep(1);
-                } else if (grid[actualX + 1][actualY] == 0) {
-                    actualX += 1;
+                } else if (grid[actualY + 1][actualX] == 0) {
+                    actualY += 1;
                     camino.anadir_final(actualX);
                     camino.anadir_final(actualY);
                     backtrack.anadir_final(actualX);
@@ -142,13 +153,13 @@ public:
                     //cout << "\n se mueve hacia abajo   >>> ("<<actualX<<", "<<actualY<<")\n";
                     //sleep(1);
                 } else{
-                    actualY=backtrack.obtener_dato(backtrack.tamano()-4);
-                    actualX=backtrack.obtener_dato(backtrack.tamano()-3);
+                    actualX=backtrack.obtener_dato(backtrack.tamano()-4);
+                    actualY=backtrack.obtener_dato(backtrack.tamano()-3);
 
                     camino.anadir_final(actualX);
                     camino.anadir_final(actualY);
 
-                    grid[backtrack.obtener_dato(backtrack.tamano()-2)][backtrack.obtener_dato(backtrack.tamano()-1)]=1;
+                    grid[backtrack.obtener_dato(backtrack.tamano()-1)][backtrack.obtener_dato(backtrack.tamano()-2)]=1;
 
                     backtrack.borrar_Dato((backtrack.tamano()-1));
                     backtrack.borrar_Dato((backtrack.tamano()-1));
@@ -158,15 +169,10 @@ public:
 
                 }
             }
-
-
-
         }
-        camino.print_lista();
         return camino;
 
 
     }
 };
-
 #endif //GLADIATORS_BACKTRACK_H

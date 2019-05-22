@@ -104,7 +104,7 @@ public:
 
         // assign IP, PORT
         servaddr.sin_family = AF_INET;
-        servaddr.sin_addr.s_addr = inet_addr("192.168.100.16");
+        servaddr.sin_addr.s_addr = inet_addr("192.168.43.227");
         servaddr.sin_port = htons(PORT);
 
         // connect the client socket to server socket

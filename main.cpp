@@ -49,7 +49,7 @@ typedef pair<int, int> Pair;
 
 int grid[COLUMNA][FILA] =
         {
-                { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -96,29 +96,25 @@ string mensaje;
 void *coneccion(void*) {
 
     while (true){
-        //mensaje = cliente->pruebabuff();
-
-
+        mensaje = cliente->pruebabuff();
+        sockfd=cliente->get_sockfd();
     }
 }
 void *controlComunicacion(void*){
-    /*
-    //sleep(1);
+
     cliente->iniciar();
-    //sockfd = cliente->get_sockfd();
     string pedir = "1";
-    cliente->enviarPaquete(cliente->get_sockfd(), pedir);
+    cliente->enviarPaquete(sockfd, pedir);
     printf("enviando POST \n");
-    sleep(1);
-    mensaje = cliente->pruebabuff();
-    cout << mensaje << endl;
-    vector<string> GldsyTrrs = serial.split(mensaje, "-");
+    string GyT = cliente->pruebabuff();
+    vector<string> GldsyTrrs = serial.split(GyT, "-");
+    //cliente->terminarConexion();
     string pqglads = GldsyTrrs[0];
     vector<string> gds = serial.split(pqglads, ";");
     for (int m = 0; m <= gds.size() - 1; m++) {
         Gladiador gladiadorDes = serial.deserealizarGladiador(gds[m]);
         cout << "agregando a " << gladiadorDes.getResistencia() << endl;
-        gladiadoresmuertos.add_head(gladiadorDes);
+        gladiadores.add_head(gladiadorDes);
     }
     string paqetdetorres=GldsyTrrs[1];
     cout << paqetdetorres << endl;
@@ -129,14 +125,14 @@ void *controlComunicacion(void*){
         Torres torreDes = serial.desearilzarTorre(trrs[m]);
         cout << "agregando a " << torreDes.getAlcance() << endl;
         torres.add_head(torreDes);
-        //enJuego = true;
+        enJuego = true;
     }
-    EnviarGladiadores=true;
     //---------------------------------CONTROL DE POST Y GET------------------
     while(true){
         //--------POST GLADIADORES--------
         if(EnviarGladiadores==true){
-            string paquete="$";
+            sleep(1);
+            string paquete="8";
             for(int i=0;i<=gladiadoresmuertos.size()-1;i++){
                 string gldrs=serial.serializadorGladiador(gladiadoresmuertos.getbyposicion(i));
                 if (i==0){
@@ -147,19 +143,18 @@ void *controlComunicacion(void*){
                 }
             }
             cliente->iniciar();
-            cliente->enviarPaquete(cliente->get_sockfd(), paquete);
+            cliente->enviarPaquete(sockfd, paquete);
             cout<<"enviando"<<paquete<<endl;
             EnviarGladiadores=false;
-            sleep(1);
+            //sleep(1);
             RecibirGladiadores=true;
         }
         //-------------GET GLADIADORES-----------
         if(RecibirGladiadores==true){
-            string paquete="2";
-            cliente->iniciar();
-            cliente->enviarPaquete(sockfd, paquete);
-            string glads = cliente->pruebabuff();
-            cout<<"gladiadores que llegasn"<<glads<<endl;
+
+            string glads = mensaje;
+            cliente->terminarConexion();
+            cout<<"gladiadores que llegan "<<glads<<endl;
             vector<string> gds = serial.split(glads, ";");
             for (int m = 0; m <= gds.size() - 1; m++) {
                 Gladiador gladiadorDes = serial.deserealizarGladiador(gds[m]);
@@ -172,8 +167,8 @@ void *controlComunicacion(void*){
         //--------POST TORRES--------
         if (EnviarTorres==true){
             string paqueteTrs="#";
-            for(int i=0;torresTablero.size()-1;i++){
-                string trrs=serial.serializarTorreta(torresTablero.getbyposicion(i));
+            for(int i=0;i<=torres.size()-1;i++){
+                string trrs=serial.serializarTorreta(torres.getbyposicion(i));
                 if (i==0){
                     paqueteTrs=paqueteTrs+trrs;
                 }else {
@@ -181,16 +176,20 @@ void *controlComunicacion(void*){
                 }
             }
             cout<<"enviando"<<paqueteTrs<<endl;
+            cliente->iniciar();
             cliente->enviarPaquete(sockfd, paqueteTrs);
             EnviarTorres=false;
             RecibirTorres=true;
+            sleep(1);
         }
         //-------------GET TORRES-----------
         if(RecibirTorres==true){
-            string paquete="3";
-            cliente->enviarPaquete(sockfd, paquete);
-            string pqtrs;
-            pqtrs = cliente->pruebabuff();
+            //string paquete="3";
+            //cliente->enviarPaquete(sockfd, paquete);
+            string pqtrs=mensaje;
+            cout<<"recibiendo  "<<pqtrs<<endl;
+            cliente->terminarConexion();
+            //pqtrs = cliente->pruebabuff();
             vector<string> trs = serial.split(pqtrs, ";");
             for (int m = 0; m <= trs.size() - 1; m++) {
                 Torres torreDes = serial.desearilzarTorre(trs[m]);
@@ -201,12 +200,8 @@ void *controlComunicacion(void*){
             enJuego=true; //SE INICIA LA RONDA
         }
     }
-*/
 }
-
 void *mensajes(void*) {
-
-
     //torr7.setX(14);
     //torr7.setY(12);
     torr1.setDano(2);
@@ -246,7 +241,7 @@ void *mensajes(void*) {
     g3.setName("Peter 3");
     g4.setName("Peter 4");
 
-
+/*
     gladiadores.add_end(g3);
     gladiadores.add_end(g4);
     gladiadores.add_end(g1);
@@ -257,7 +252,7 @@ void *mensajes(void*) {
     torres.add_end(torr9);
     enJuego = true;
     //sleep(1);
-
+*/
     while (true) {
         //si se esta en partida y ya no hay torres-------------------------------> SE TERMINA LA RONDA
         if (enJuego == true) {
@@ -371,7 +366,6 @@ void *mensajes(void*) {
     }
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=BACKTRAKING=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         if (pathfinding==2) {
-
             for (int t = 0; t <= gladiadoresTablero.size() - 1; t++) {
                 if (gladiadoresTablero.getbyposicion(t).getX() == 19 && gladiadoresTablero.getbyposicion(t).getY() == 19) {
                     Gladiador final = gladiadoresTablero.getbyposicion(t);
@@ -421,17 +415,7 @@ void *mensajes(void*) {
         gtk_main();
 
     };
-    void colocar(int x, int y) {
-        Torres t = torres.getbyposicion(0);
 
-        torres.getbyposicion(0).setX(x);
-        torres.getbyposicion(0).setY(y);
-        grid[x][y] = 1;
-        torresTablero.add_end(torres.getbyposicion(0));
-        torres.del_by_position(0);
-        printf("se agrego una torre al tablero \n");
-
-    }
     int main(int argc, char *argv[]) {
         //torres.add_end(torr1);
         //torres.add_end(torr3);
@@ -559,7 +543,7 @@ void *mensajes(void*) {
             int matx = (mousex - 265) / 39; //CON LAS COORDENADAS  MOUSEX,MOUSEY
             int maty = (mousey - 32) / 39;
     //SI HABIA UNA TORRE SELECCIONADA  Y EL ESPACIO ESTA DISPONIBLE EN LA MATRIZ
-            if (torre_seleccionada && grid[matx][maty] == 0 && matx>=0 && matx<20 &&maty>=0 && maty<20) {
+            if (torre_seleccionada && grid[matx][maty] == 0) {
                 Torres t = torres.getbyposicion(torres.size() - 1);
                 t.setX(matx);               //Se le asignana las coordenadas de donde se pulso
                 t.setY(maty);
