@@ -20,8 +20,10 @@ public:
     int fuerzalanzador;
     int velocidadlanzador;
     int altotorre;
-    int dano = (generaciones+danoInferior+danoSuperior+potencia+tipobala-altotorre)/4;
-    int alcance = (fuerzalanzador+velocidadlanzador+altotorre-tipobala)/2;
+    int dano = (danoInferior+danoSuperior+potencia+tipobala)/4;
+    int alcance = (fuerzalanzador+velocidadlanzador+altotorre+tipobala)/4;
+    int generaciones;
+
     int X;
     int Y;
 
@@ -131,7 +133,6 @@ public:
         Torres::alcance = alcance;
     }
 
-    int generaciones;
 };
 
 

@@ -10,6 +10,8 @@
 #include "Torres.h"
 #include <vector>
 #include <bits/stdc++.h>
+//#include "list.h"
+//#include "list.cpp"
 
 using namespace std;
 
@@ -20,23 +22,23 @@ class Json{
 public:
     string serializadorGladiador(Gladiador gla){
         string String =
-                "{\"name\":"+gla.getName() + "\"" +"," +
-                "\"edad\":"+ to_string(gla.getEdad()) + "," +
-                "\"probSupervivencia\":"+ to_string(gla.getprobSupervivencia()) + "," +
-                "\"edad\":"+ to_string(gla.getEdad()) + "," +
-                "\"generaciones\":"+ to_string(gla.getGeneraciones()) + "," +
-                "\"inteligeniaEmocional\":"+ to_string(gla.getinteligenciaEmocional()) + "," +
-                "\"condFisica\":"+ to_string(gla.getcondFisica()) + "," +
-                "\"fuerzaSuperior\":"+ to_string(gla.getfuerzaSuperior()) + "," +
-                "\"fuerzaInferior\":"+ to_string(gla.getfuerzaInferior()) + "," +
-                "\"x\":"+ to_string(gla.getX()) + "," +
-                "\"y\":"+ to_string(gla.getY()) + "}";
+                "{\"name\": \""+gla.getName() + "\"" +"," +
+                "\"edad\": "+ to_string(gla.getEdad()) + "," +
+                "\"probSupervivencia\": "+ to_string(gla.getprobSupervivencia()) + "," +
+                "\"generaciones\": "+ to_string(gla.getGeneraciones()) + "," +
+                "\"inteligeniaEmocional\": "+ to_string(gla.getinteligenciaEmocional()) + "," +
+                "\"condFisica\": "+ to_string(gla.getcondFisica()) + "," +
+                "\"fuerzaSuperior\": "+ to_string(gla.getfuerzaSuperior()) + "," +
+                "\"fuerzaInferior\": "+ to_string(gla.getfuerzaInferior()) + "," +
+                "\"resistencia\": "+ to_string(gla.getResistencia()) + "," +
+                "\"x\": "+ to_string(gla.getX()) + "," +
+                "\"y\": "+ to_string(gla.getY()) + "}";
 
         return String;
       }
      string serializarTorreta(Torres tor) {
         string string =
-                "{\"name\": " + tor.getNombre() + "\"" + "," +
+                "{\"name\": \""+ tor.getNombre() + "\"" + "," +
                 "\"generaciones\": " + to_string(tor.generaciones) + "," +
                 "\"danoInferior\": " + to_string(tor.danoInferior) + "," +
                 "\"danoSuperior\": " + to_string(tor.danoSuperior) + "," +
@@ -176,7 +178,8 @@ public:
         string na = "";
         string r = tor;
         int ge = 0; int di = 0; int ds = 0;int po = 0;
-        int ti = 0;int fl = 0;int vl = 0;int at = 0;
+        int ti = 0;int fl = 0;int vl = 0;int alt = 0;
+        int atq=0;int alc=0;
         int cont=1;
         vector<string> torreta = split (r, ",");
 
@@ -200,7 +203,7 @@ public:
             if(cont == 8) { vl = std::stoi(parte[1]);}
             if(cont == 9) {
                 string u = parte[1];
-                vector<string> o = split (u, "}");at = std::stoi(o[0]);
+                vector<string> o = split (u, "}");alt = std::stoi(o[0]);
 
             }
             cont++;
@@ -214,13 +217,36 @@ public:
         g.setTipobala(ti);
         g.setFuerzalanzador(fl);
         g.setVelocidadlanzador(vl);
+        g.setAltotorre(alt);
+        g.setDano((di+ds+po+ti)/4);
+        g.setAlcance((fl+vl+alt+ti)/4);
         cont = 1;
         return  g;
     }
+    /*
+ string serializarListaG(List<Gladiador> list) {
+        string generacion0Gladiadores = "$";
+        List<Gladiador> genCeroG = list;
+        for ( int i = 0; i < (genCeroG.size()-1); i++) {
+            generacion0Gladiadores = generacion0Gladiadores + serializadorGladiador(genCeroG.getbyposicion(i))+ ";" ;
+        }
+        generacion0Gladiadores = generacion0Gladiadores + serializadorGladiador(genCeroG.getbyposicion(genCeroG.size()-1));
+        return generacion0Gladiadores;
+    }
+ string serializarListaT(List<Torres> list) {
+        string generacion0Torreta = "";
+        List<Torres> genCeroT = list;
+        for ( int i = 0; i < (genCeroT.size()-1); i++) {
+            generacion0Torreta = generacion0Torreta + serializarTorreta(genCeroT.getbyposicion(i))+ ";" ;
+        }
+        generacion0Torreta = generacion0Torreta + serializarTorreta(genCeroT.getbyposicion(genCeroT.size()-1));
+        return generacion0Torreta;
+    }*/
     Gladiador deserealizarGladiador(string glad){
         string na = "";
         int ed = 0; int ps = 0; int ge = 0;int ie = 0;
         int cf = 0;int fs = 0;int fi = 0;int x = 0;int y = 0;
+        int res;
         string r =glad;
         vector<string> gladiador = split (r, ",");
         int cont=1;
@@ -261,6 +287,7 @@ public:
         g.setfuerzaInferior(fi);
         g.setX(x);
         g.setY(y);
+        g.setResistencia((ps+ge+ie+cf+fs+fi)/6);
         cont = 1;
         return g;
 

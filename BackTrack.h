@@ -38,7 +38,7 @@ public:
         while(actualY <= finalY && actualX <= finalX) {
 
             if (actualY==finalY && actualX==finalX){
-                //cout << "\n***  El gladiador llego a su destino  ***  >>> ("<<actualX<<", "<<actualY<<")\n";
+                cout << "\n***  El gladiador llego a su destino  ***  >>> ("<<actualX<<", "<<actualY<<")\n";
                 camino.print_lista();
                 return camino;
             }
@@ -159,6 +159,7 @@ public:
 
 
         }
+        camino.print_lista();
         return camino;
 
 
