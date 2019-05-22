@@ -8,7 +8,7 @@
 
 using namespace std;
 
-
+//clase que crea objeto tipo Gladiador con sus atributos
 class Gladiador {
 private:
     string name;
@@ -23,6 +23,7 @@ private:
     int resistencia;
     int pos;
     bool atacado=false;
+    //Getters & Setters 
 public:
     bool setAtacado() const {
         return atacado;
