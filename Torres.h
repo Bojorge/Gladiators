@@ -8,7 +8,7 @@
 
 using namespace std;
 
-
+//metodo que crea Objeto Torres y sus atributos
 class Torres {
 public:
 
@@ -26,6 +26,8 @@ public:
 
     int X;
     int Y;
+    
+    //Getters & Setters
 
     int getX() const {
         return X;
